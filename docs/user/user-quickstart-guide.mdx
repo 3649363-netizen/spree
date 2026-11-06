@@ -11,16 +11,9 @@ This guide walks you through the essential setup tasks, from configuring payment
 
 ![Getting Started tab showing the onboarding checklist with four key tasks](/docs/images/user/quickstart/1-getting-started.png)
 
-When you log into a fresh Spree Commerce instance, you’ll land on the Getting Started tab - a quick-launch checklist that helps you configure the essentials and go live faster.
+When you log into a fresh Spree Commerce instance, the dashboard shows a Getting Started checklist to help you configure the essentials and go live faster.
 
-You’ll see four key onboarding tasks:
-
-- Setup payments
-- Add products
-- Set customer support email
-- Setup taxes collection
-
-Once all tasks are completed, the checklist will disappear from view. Let’s walk through each step below.
+Depending on what your store still needs, the checklist can include setting up payment methods and taxes, adding products, adding a support email and shipping address, and connecting a storefront. Completed tasks disappear from the list. Let’s walk through the main setup steps below.
 
 ### Setup Payment Method
 
@@ -92,23 +85,13 @@ From here, you can configure:
 
 For full instructions, please refer to our [<u>Tax Rates support article</u>](/user/settings/tax-rates).
 
-## Shipping Methods
+## Delivery Setup
 
-![Configure shipping methods Spree onboarding step](/docs/images/user/quickstart/7-shipping-methods.png)
+Physical products need a delivery method before customers can complete checkout. Open **Settings → Delivery Profiles** and choose the store default profile, or create a separate profile for a group of products. Set the locations the goods ship from, the zones they can reach, and the delivery methods offered in each zone.
 
-Customers won’t be able to complete orders without at least one shipping method configured.
+See [<u>Delivery Profiles</u>](/user/settings/delivery-profiles) for the full setup, including zones, rates and delivery methods.
 
-To configure a shipping methods, go to **Settings → Shipping** and click **New Shipping Method** to define:
-
-- Shipping zones
-- Cost calculator settings
-- Estimated delivery times
-- Shipping and Tax categories
-- Tracking links
-
-See [<u>Delivery Profiles</u>](/user/settings/delivery-profiles) for a full breakdown of settings and examples.
-
-<Note>By default, all Spree stores have a Digital Delivery method pre-configured. If you plan on selling digital products, be sure to assign those products the Digital shipping category.</Note>
+<Note>For digital products, use a delivery profile with its kind set to **Digital**. The profile’s capabilities and delivery methods determine which digital fulfillment options are available.</Note>
 
 ## Next Steps
 

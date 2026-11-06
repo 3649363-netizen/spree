@@ -1250,227 +1250,243 @@
           },
           {
             "tab": "User Guide",
-            "groups": [
+            "languages": [
               {
-                "group": "Manage",
-                "pages": [
+                "language": "en",
+                "groups": [
                   {
-                    "group": "Introduction",
-                    "icon": "book-open",
-                    "pages": [
-                      "user/what-is-spree-commerce",
-                      "user/using-spree",
-                      "user/user-quickstart-guide"
-                    ]
-                  },
-                  {
-                    "group": "Products",
-                    "icon": "package",
-                    "pages": [
-                      "user/products/products",
-                      "user/products/adding-products",
-                      "user/products/variants",
-                      "user/products/options",
-                      "user/products/media",
-                      "user/products/categories",
-                      "user/products/collections",
-                      "user/products/custom-product-fields",
-                      "user/products/import-and-export",
-                      "user/products/import-template"
-                    ]
-                  },
-                  {
-                    "group": "Inventory",
-                    "icon": "warehouse",
-                    "pages": [
-                      "user/inventory/stock-levels",
-                      "user/inventory/stock-transfers",
-                      "user/inventory/purchase-orders",
-                      "user/inventory/suppliers"
-                    ]
-                  },
-                  {
-                    "group": "Pricing",
-                    "icon": "tag",
-                    "pages": [
-                      "user/pricing/price-lists"
-                    ]
-                  },
-                  {
-                    "group": "Catalogs",
-                    "icon": "book-marked",
-                    "pages": [
-                      "user/catalogs/catalogs"
-                    ]
-                  },
-                  {
-                    "group": "Translations",
-                    "icon": "languages",
-                    "pages": [
-                      "user/translations/translations"
-                    ]
-                  },
-                  {
-                    "group": "Orders",
-                    "pages": [
-                      "user/orders/orders",
-                      "user/orders/processing-orders",
-                      "user/orders/draft-orders",
-                      "user/orders/returns",
-                      "user/orders/exchanges",
-                      "user/orders/claims"
-                    ],
-                    "icon": "shopping-cart"
-                  },
-                  {
-                    "group": "Customers",
-                    "pages": [
-                      "user/customers/customers",
-                      "user/customers/customer-profile",
-                      "user/customers/customer-groups",
-                      "user/customers/companies"
-                    ],
-                    "icon": "users"
-                  },
-                  {
-                    "group": "Sellers",
-                    "icon": "store",
-                    "pages": [
-                      "user/sellers/sellers",
-                      "user/sellers/onboarding",
-                      "user/sellers/seller-panel",
-                      "user/sellers/products",
-                      "user/sellers/orders",
-                      "user/sellers/commission-rates",
-                      "user/sellers/transfers",
-                      "user/sellers/payouts"
-                    ]
-                  },
-                  {
-                    "group": "Loyalty",
-                    "pages": [
-                      "user/loyalty/gift-cards",
-                      "user/loyalty/store-credits"
-                    ],
-                    "icon": "gift"
-                  },
-                  {
-                    "group": "Promotions",
-                    "pages": [
-                      "user/promotions/create-a-promotion",
-                      "user/promotions/promotion-rules",
-                      "user/promotions/promotion-actions"
-                    ],
-                    "icon": "ticket-percent"
-                  },
-                  {
-                    "group": "Reports",
-                    "icon": "chart-column",
-                    "pages": [
-                      "user/reports/reports"
-                    ]
-                  },
-                  {
-                    "group": "AI Agents",
-                    "icon": "bot",
-                    "pages": [
-                      "user/ai-agents/ai-agents",
-                      "user/ai-agents/connect-claude",
-                      "user/ai-agents/connect-chatgpt"
-                    ]
-                  },
-                  {
-                    "group": "Settings",
-                    "icon": "settings",
+                    "group": "Manage",
                     "pages": [
                       {
-                        "group": "Store",
+                        "group": "Introduction",
+                        "icon": "book-open",
+                        "pages": [
+                          "user/what-is-spree-commerce",
+                          "user/using-spree",
+                          "user/user-quickstart-guide"
+                        ]
+                      },
+                      {
+                        "group": "Products",
+                        "icon": "package",
+                        "pages": [
+                          "user/products/products",
+                          "user/products/adding-products",
+                          "user/products/variants",
+                          "user/products/options",
+                          "user/products/media",
+                          "user/products/categories",
+                          "user/products/collections",
+                          "user/products/custom-product-fields",
+                          "user/products/import-and-export",
+                          "user/products/import-template"
+                        ]
+                      },
+                      {
+                        "group": "Inventory",
+                        "icon": "warehouse",
+                        "pages": [
+                          "user/inventory/stock-levels",
+                          "user/inventory/stock-transfers",
+                          "user/inventory/purchase-orders",
+                          "user/inventory/suppliers"
+                        ]
+                      },
+                      {
+                        "group": "Pricing",
+                        "icon": "tag",
+                        "pages": [
+                          "user/pricing/price-lists"
+                        ]
+                      },
+                      {
+                        "group": "Catalogs",
+                        "icon": "book-marked",
+                        "pages": [
+                          "user/catalogs/catalogs"
+                        ]
+                      },
+                      {
+                        "group": "Translations",
+                        "icon": "languages",
+                        "pages": [
+                          "user/translations/translations"
+                        ]
+                      },
+                      {
+                        "group": "Orders",
+                        "pages": [
+                          "user/orders/orders",
+                          "user/orders/processing-orders",
+                          "user/orders/draft-orders",
+                          "user/orders/returns",
+                          "user/orders/exchanges",
+                          "user/orders/claims"
+                        ],
+                        "icon": "shopping-cart"
+                      },
+                      {
+                        "group": "Customers",
+                        "pages": [
+                          "user/customers/customers",
+                          "user/customers/customer-profile",
+                          "user/customers/customer-groups",
+                          "user/customers/companies"
+                        ],
+                        "icon": "users"
+                      },
+                      {
+                        "group": "Sellers",
                         "icon": "store",
                         "pages": [
-                          "user/settings/store-details",
-                          "user/settings/emails",
-                          "user/settings/policies",
-                          "user/settings/sales-channels",
-                          "user/settings/custom-fields",
-                          "user/settings/integrations"
+                          "user/sellers/sellers",
+                          "user/sellers/onboarding",
+                          "user/sellers/seller-panel",
+                          "user/sellers/products",
+                          "user/sellers/orders",
+                          "user/sellers/commission-rates",
+                          "user/sellers/transfers",
+                          "user/sellers/payouts"
                         ]
                       },
                       {
-                        "group": "Selling",
-                        "icon": "badge-dollar-sign",
+                        "group": "Loyalty",
                         "pages": [
-                          "user/settings/markets",
-                          "user/settings/payments",
-                          "user/settings/taxes",
-                          "user/settings/tax-categories",
-                          "user/settings/tax-rates"
+                          "user/loyalty/gift-cards",
+                          "user/loyalty/store-credits"
+                        ],
+                        "icon": "gift"
+                      },
+                      {
+                        "group": "Promotions",
+                        "pages": [
+                          "user/promotions/create-a-promotion",
+                          "user/promotions/promotion-rules",
+                          "user/promotions/promotion-actions"
+                        ],
+                        "icon": "ticket-percent"
+                      },
+                      {
+                        "group": "Reports",
+                        "icon": "chart-column",
+                        "pages": [
+                          "user/reports/reports"
                         ]
                       },
                       {
-                        "group": "Shipping & delivery",
-                        "icon": "truck",
+                        "group": "AI Agents",
+                        "icon": "bot",
                         "pages": [
-                          "user/settings/delivery-profiles",
-                          "user/settings/locations",
-                          "user/settings/package-types",
-                          "user/settings/product-types",
-                          "user/settings/returns-and-reasons"
+                          "user/ai-agents/ai-agents",
+                          "user/ai-agents/connect-claude",
+                          "user/ai-agents/connect-chatgpt"
                         ]
                       },
                       {
-                        "group": "Marketplace",
-                        "icon": "handshake",
+                        "group": "Settings",
+                        "icon": "settings",
                         "pages": [
-                          "user/settings/marketplace",
-                          "user/settings/seller-requirements"
+                          {
+                            "group": "Store",
+                            "icon": "store",
+                            "pages": [
+                              "user/settings/store-details",
+                              "user/settings/emails",
+                              "user/settings/policies",
+                              "user/settings/sales-channels",
+                              "user/settings/custom-fields",
+                              "user/settings/integrations"
+                            ]
+                          },
+                          {
+                            "group": "Selling",
+                            "icon": "badge-dollar-sign",
+                            "pages": [
+                              "user/settings/markets",
+                              "user/settings/payments",
+                              "user/settings/taxes",
+                              "user/settings/tax-categories",
+                              "user/settings/tax-rates"
+                            ]
+                          },
+                          {
+                            "group": "Shipping & delivery",
+                            "icon": "truck",
+                            "pages": [
+                              "user/settings/delivery-profiles",
+                              "user/settings/locations",
+                              "user/settings/package-types",
+                              "user/settings/product-types",
+                              "user/settings/returns-and-reasons"
+                            ]
+                          },
+                          {
+                            "group": "Marketplace",
+                            "icon": "handshake",
+                            "pages": [
+                              "user/settings/marketplace",
+                              "user/settings/seller-requirements"
+                            ]
+                          },
+                          {
+                            "group": "Users & permissions",
+                            "icon": "user-cog",
+                            "pages": [
+                              "user/settings/staff",
+                              "user/settings/roles"
+                            ]
+                          },
+                          {
+                            "group": "Developer",
+                            "icon": "code",
+                            "pages": [
+                              "user/settings/api-keys",
+                              "user/settings/webhooks",
+                              "user/settings/allowed-origins",
+                              "user/settings/imports"
+                            ]
+                          }
                         ]
                       },
                       {
-                        "group": "Users & permissions",
-                        "icon": "user-cog",
+                        "group": "How-to Guides",
                         "pages": [
-                          "user/settings/staff",
-                          "user/settings/roles"
-                        ]
+                          "user/how-to/selling-to-businesses",
+                          "user/how-to/multi-currency-pricing",
+                          "user/how-to/multiple-languages",
+                          "user/how-to/multi-region-pricing",
+                          "user/how-to/volume-pricing",
+                          "user/how-to/regional-volume",
+                          "user/how-to/schedule-sale-pricing"
+                        ],
+                        "icon": "compass"
                       },
                       {
-                        "group": "Developer",
-                        "icon": "code",
+                        "group": "Migration",
                         "pages": [
-                          "user/settings/api-keys",
-                          "user/settings/webhooks",
-                          "user/settings/allowed-origins",
-                          "user/settings/imports"
-                        ]
+                          "user/migration/migrate-from-shopify"
+                        ],
+                        "icon": "arrow-right-left"
+                      },
+                      {
+                        "group": "Security",
+                        "pages": [
+                          "user/security"
+                        ],
+                        "icon": "shield"
                       }
                     ]
-                  },
+                  }
+                ]
+              },
+              {
+                "language": "ru",
+                "groups": [
                   {
-                    "group": "How-to Guides",
+                    "group": "Для начала",
                     "pages": [
-                      "user/how-to/selling-to-businesses",
-                      "user/how-to/multi-currency-pricing",
-                      "user/how-to/multiple-languages",
-                      "user/how-to/multi-region-pricing",
-                      "user/how-to/volume-pricing",
-                      "user/how-to/regional-volume",
-                      "user/how-to/schedule-sale-pricing"
-                    ],
-                    "icon": "compass"
-                  },
-                  {
-                    "group": "Migration",
-                    "pages": [
-                      "user/migration/migrate-from-shopify"
-                    ],
-                    "icon": "arrow-right-left"
-                  },
-                  {
-                    "group": "Security",
-                    "pages": [
-                      "user/security"
-                    ],
-                    "icon": "shield"
+                      "ru/user/user-quickstart-guide"
+                    ]
                   }
                 ]
               }
