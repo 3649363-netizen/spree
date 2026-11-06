@@ -83,7 +83,10 @@ export function HomePage() {
 
       <div className="grid gap-4 sm:grid-cols-3">
         <StatCard label={t('home.status')}>
-          <StatusBadge status={profile.status} />
+          <StatusBadge
+            status={profile.status}
+            label={t(`home.statuses.${profile.status}`)}
+          />
         </StatCard>
         <StatCard label={t('home.products')} icon={<PackageIcon className="size-4" />}>
           {profile.products_count}

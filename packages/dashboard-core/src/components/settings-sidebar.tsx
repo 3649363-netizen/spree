@@ -361,7 +361,9 @@ function SettingsItem({
           {/* `truncate` so a long translated label gives way to the badge
               rather than pushing it out of the sidebar. */}
           <span className="truncate">{label}</span>
-          {entry.comingSoon && <SidebarMenuBadge className="ms-auto">Soon</SidebarMenuBadge>}
+          {entry.comingSoon && (
+            <SidebarMenuBadge className="ms-auto">{t('admin.common.soon')}</SidebarMenuBadge>
+          )}
           {entry.badge && (
             <span className="ms-auto shrink-0">
               <entry.badge />

@@ -384,7 +384,7 @@ function CounterRow({
   link: CounterLink | undefined
   storeId: string
 }) {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const { store } = useStore()
   const Icon = COUNTER_ICONS[counter.key] ?? CircleDotIcon
   // The server sends a key, never copy, so the interface language always wins.
@@ -418,7 +418,7 @@ function CounterRow({
             counter.value === 0 && 'text-muted-foreground',
           )}
         >
-          {counter.value.toLocaleString()}
+          {counter.value.toLocaleString(i18n.language)}
         </span>
         {link && <ChevronRightIcon className="size-4 text-muted-foreground" />}
       </ItemActions>

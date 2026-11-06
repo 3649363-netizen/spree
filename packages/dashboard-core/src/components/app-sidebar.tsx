@@ -254,10 +254,14 @@ function NavSkeleton() {
  * expands it again.
  */
 function CollapseTrigger() {
+  const { t } = useTranslation()
   const { isMobile, state } = useSidebar()
   if (isMobile || state === 'collapsed') return null
 
   return (
-    <SidebarTrigger className="shrink-0 text-muted-foreground hover:bg-sidebar-accent hover:text-foreground" />
+    <SidebarTrigger
+      aria-label={t('admin.a11y.toggle_sidebar')}
+      className="shrink-0 text-muted-foreground hover:bg-sidebar-accent hover:text-foreground"
+    />
   )
 }

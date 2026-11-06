@@ -56,6 +56,7 @@ import {
   marketValuesToParams,
 } from '../../../../schemas/market'
 import '../../../../tables/markets'
+import { getAvailableUiLocales } from '../../../../i18n-setup'
 
 const marketsSearchSchema = resourceSearchSchema.extend({
   edit: z.string().optional(),
@@ -328,7 +329,15 @@ function EditMarketSheet({
 
 function MarketFormFields({ form }: { form: UseFormReturn<MarketFormValues> }) {
   const { t } = useTranslation()
-  const { availableLocales } = useStore()
+  const { availableLocales: storeAvailableLocales } = useStore()
+  const availableLocales = Array.from(
+    new Set([
+      ...storeAvailableLocales,
+      ...getAvailableUiLocales()
+        .filter(({ code }) => code === 'ru')
+        .map(({ code }) => code),
+    ]),
+  )
   const { errors } = form.formState
   const defaultLocaleField = form.watch('default_locale')
 

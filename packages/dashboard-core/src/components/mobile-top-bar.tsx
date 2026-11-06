@@ -54,7 +54,10 @@ export function MobileTopBar({
     // (44px), the touch target both platforms ask for and the size this
     // codebase already uses for mobile controls in the table toolbar.
     <div className="sticky top-0 z-30 flex h-14 shrink-0 items-center gap-1 border-b border-border bg-card px-2 md:hidden">
-      <SidebarTrigger className="size-11 shrink-0 text-muted-foreground hover:bg-accent hover:text-foreground" />
+      <SidebarTrigger
+        aria-label={t('admin.a11y.toggle_sidebar')}
+        className="size-11 shrink-0 text-muted-foreground hover:bg-accent hover:text-foreground"
+      />
 
       {isLoading ? (
         <Skeleton className="h-4 w-28" />

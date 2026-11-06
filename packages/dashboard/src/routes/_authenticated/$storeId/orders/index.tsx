@@ -7,6 +7,7 @@ import {
 import { Button } from '@spree/dashboard-ui'
 import { PlusIcon } from '@spree/dashboard-ui/icons'
 import { createFileRoute, Link } from '@tanstack/react-router'
+import { useTranslation } from 'react-i18next'
 import '../../../../tables/orders'
 
 export const Route = createFileRoute('/_authenticated/$storeId/orders/')({
@@ -15,6 +16,7 @@ export const Route = createFileRoute('/_authenticated/$storeId/orders/')({
 })
 
 function OrdersPage() {
+  const { t } = useTranslation()
   const searchParams = Route.useSearch()
   const { storeId } = Route.useParams()
 
@@ -31,7 +33,7 @@ function OrdersPage() {
           <Button size="sm" className="h-[2.125rem]" asChild>
             <Link to="/$storeId/orders/new" params={{ storeId }}>
               <PlusIcon className="size-4" />
-              New Order
+              {t('admin.pages.orders.new.title')}
             </Link>
           </Button>
         </>

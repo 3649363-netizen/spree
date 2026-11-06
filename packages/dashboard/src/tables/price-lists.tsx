@@ -69,7 +69,8 @@ defineTable<PriceList>('price-lists', {
       filterable: true,
       filterType: 'date',
       default: false,
-      render: (list) => (list.starts_at ? new Date(list.starts_at).toLocaleDateString() : '—'),
+      render: (list) =>
+        list.starts_at ? new Date(list.starts_at).toLocaleDateString(i18n.language) : '—',
     },
     {
       key: 'ends_at',
@@ -78,7 +79,8 @@ defineTable<PriceList>('price-lists', {
       filterable: true,
       filterType: 'date',
       default: false,
-      render: (list) => (list.ends_at ? new Date(list.ends_at).toLocaleDateString() : '—'),
+      render: (list) =>
+        list.ends_at ? new Date(list.ends_at).toLocaleDateString(i18n.language) : '—',
     },
   ],
 })

@@ -88,7 +88,7 @@ export function ExportButton({
   columns,
   totalCount,
 }: ExportButtonProps) {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const [open, setOpen] = useState(false)
   const [selection, setSelection] = useState<Selection>('filtered')
   const exportMutation = useExport()
@@ -149,7 +149,7 @@ export function ExportButton({
                 value="filtered"
                 icon={<FilterIcon className="size-4" />}
                 title={t('admin.components.export_button.filtered.title')}
-                description={describeFiltered(t, hasActiveFilter, totalCount)}
+                description={describeFiltered(t, hasActiveFilter, totalCount, i18n.language)}
               />
               <ChoiceCard
                 value="all"
@@ -178,12 +178,13 @@ function describeFiltered(
   t: TFunction,
   hasActiveFilter: boolean,
   totalCount: number | undefined,
+  locale: string,
 ): string {
   if (!hasActiveFilter) return t('admin.components.export_button.filtered.no_filter')
   if (totalCount === undefined) return t('admin.components.export_button.filtered.unknown_count')
   return t('admin.components.export_button.filtered.count', {
     count: totalCount,
-    formattedCount: totalCount.toLocaleString(),
+    formattedCount: totalCount.toLocaleString(locale),
   })
 }
 

@@ -487,7 +487,7 @@ function MappingStep({
 // failed-rows retry: every row is already terminal then, so the bar would sit
 // at 100% — show the shrinking failed count instead.
 function ProcessingCard({ imp, retryPass }: { imp: PanelImport; retryPass: boolean }) {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
 
   const total = imp.rows_count
   const processed = imp.completed_rows_count + imp.failed_rows_count
@@ -511,8 +511,8 @@ function ProcessingCard({ imp, retryPass }: { imp: PanelImport; retryPass: boole
           ) : (
             <>
               {t('admin.imports.processing.progress', {
-                processed: processed.toLocaleString(),
-                total: total.toLocaleString(),
+                processed: processed.toLocaleString(i18n.language),
+                total: total.toLocaleString(i18n.language),
               })}
               {imp.failed_rows_count > 0 && (
                 <span className="text-destructive">
@@ -535,7 +535,7 @@ function ProcessingCard({ imp, retryPass }: { imp: PanelImport; retryPass: boole
 // ---------------------------------------------------------------------------
 
 function ResultsCard({ imp }: { imp: PanelImport }) {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
 
   return (
     <Card>
@@ -544,8 +544,8 @@ function ResultsCard({ imp }: { imp: PanelImport }) {
         <p className="font-medium">{t('admin.imports.results.completed_title')}</p>
         <p className="text-muted-foreground text-sm">
           {t('admin.imports.results.summary', {
-            completed: imp.completed_rows_count.toLocaleString(),
-            failed: imp.failed_rows_count.toLocaleString(),
+            completed: imp.completed_rows_count.toLocaleString(i18n.language),
+            failed: imp.failed_rows_count.toLocaleString(i18n.language),
           })}
         </p>
       </CardContent>

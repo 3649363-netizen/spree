@@ -119,7 +119,7 @@ function RequirementRow({
   requirement: SellerRequirementStatus
   canEdit: boolean
 }) {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const confirm = useConfirm()
   const [policyOpen, setPolicyOpen] = useState(false)
   const metadataSheet = useMetadataSheet()
@@ -265,7 +265,7 @@ function RequirementRow({
               <SheetTitle>{policy.name}</SheetTitle>
               <SheetDescription>
                 {t('admin.sellers.onboarding.policy_updated', {
-                  date: new Date(policy.updated_at).toLocaleDateString(),
+                  date: new Date(policy.updated_at).toLocaleDateString(i18n.language),
                 })}
               </SheetDescription>
             </SheetHeader>

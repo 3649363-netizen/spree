@@ -1,0 +1,1643 @@
+{
+  "admin": {
+    "address_select": { "none": "Адрес не выбран" },
+    "app_name": "Spree — панель оператора",
+    "a11y": {
+      "breadcrumb": "Навигационная цепочка",
+      "breadcrumb_more": "Ещё",
+      "bulk_actions": "Действия с выбранными",
+      "change_color": "Изменить цвет ({{value}})",
+      "clear_date": "Очистить дату",
+      "clear_selection": "Снять выделение",
+      "collapse_all": "Свернуть всё",
+      "delete_image": "Удалить изображение",
+      "drag_to_reorder": "Перетащите, чтобы изменить порядок",
+      "edit_media": "Изменить медиафайл",
+      "expand_all": "Развернуть всё",
+      "hide_value": "Скрыть значение",
+      "pick_color": "Выбрать цвет",
+      "refetch": "Загрузить повторно",
+      "remove_image": "Убрать изображение",
+      "remove_value": "Удалить значение",
+      "reorder": "Изменить порядок",
+      "select_all_rows": "Выбрать все строки на этой странице",
+      "select_row": "Выбрать строку",
+      "settings_navigation": "Навигация по настройкам",
+      "show_value": "Показать значение",
+      "sidebar": "Боковая панель",
+      "sidebar_description": "Показывает боковую панель на мобильном устройстве.",
+      "stock_at_locations": "Остатки по складам",
+      "store_switcher": "Сменить магазин",
+      "toggle_sidebar": "Свернуть или развернуть боковую панель",
+      "upload_image": "Загрузить изображение",
+      "user_menu": "Меню пользователя",
+      "view_image": "Просмотреть изображение"
+    },
+    "account": {
+      "community": "Сообщество",
+      "contact_support": "Связаться с поддержкой",
+      "documentation": "Документация",
+      "edit_profile": "Изменить профиль",
+      "language": {
+        "label": "Язык",
+        "update_failed": "Не удалось сохранить язык. Повторите попытку."
+      },
+      "log_out": "Выйти",
+      "preferences": "Параметры",
+      "view_store": "Открыть магазин"
+    },
+    "actions": {
+      "actions_menu": "Действия",
+      "add": "Добавить",
+      "adding": "Добавление…",
+      "apply": "Применить",
+      "back": "Назад",
+      "cancel": "Отмена",
+      "clear": "Очистить",
+      "close": "Закрыть",
+      "confirm": "Подтвердить",
+      "copied": "Скопировано!",
+      "copy": "Копировать",
+      "create": "Создать",
+      "creating": "Создание…",
+      "delete": "Удалить",
+      "deleting": "Удаление…",
+      "discard": "Отменить изменения",
+      "discard_changes": "Отменить изменения",
+      "done": "Готово",
+      "duplicate": "Дублировать",
+      "edit": "Изменить",
+      "export": "Экспортировать",
+      "exporting": "Экспорт…",
+      "generate": "Создать",
+      "hide": "Скрыть",
+      "import": "Импортировать",
+      "invite": "Пригласить",
+      "more_actions": "Другие действия",
+      "remove": "Убрать",
+      "remove_item": "Удалить: {{label}}",
+      "remove_rule": "Удалить правило",
+      "reset": "Сбросить",
+      "revoke": "Отозвать",
+      "save": "Сохранить",
+      "saving": "Сохранение…",
+      "search": "Поиск",
+      "send": "Отправить",
+      "send_invitation": "Отправить приглашение",
+      "sending": "Отправка…",
+      "show": "Показать",
+      "sign_in": "Войти",
+      "signing_in": "Вход…",
+      "view": "Просмотреть",
+      "view_all": "Показать все",
+      "view_details": "Подробнее"
+    },
+    "address": {
+      "not_located_yet": "Карта появится после определения адреса."
+    },
+    "address_book": {
+      "default_billing": "Платёжный адрес по умолчанию",
+      "default_shipping": "Адрес доставки по умолчанию",
+      "inherited_from": "Унаследовано от {{name}}",
+      "set_default_billing": "Назначить платёжным адресом по умолчанию",
+      "set_default_shipping": "Назначить адресом доставки по умолчанию"
+    },
+    "auth": {
+      "back_to_login": "Вернуться ко входу",
+      "forgot_password": {
+        "error": "Произошла ошибка. Повторите попытку.",
+        "link": "Забыли пароль?",
+        "sending": "Отправка…",
+        "sent_subtitle": "Если аккаунт с таким адресом существует, скоро придёт ссылка для сброса пароля.",
+        "sent_title": "Проверьте почту",
+        "submit": "Отправить ссылку для сброса",
+        "subtitle": "Введите адрес электронной почты, и мы отправим ссылку для сброса пароля.",
+        "title": "Сброс пароля"
+      },
+      "login": {
+        "account_deactivated": "Этот аккаунт отключён. Обратитесь к администратору, чтобы восстановить доступ.",
+        "account_not_provisioned": "У этого аккаунта нет доступа к магазину. Попросите администратора прислать приглашение.",
+        "divider": "или",
+        "invalid_oauth_state": "Сеанс входа истёк или недействителен. Начните вход заново.",
+        "providers_error_message": "Не удалось загрузить способы входа. Обновите страницу или обратитесь к администратору.",
+        "providers_error_title": "Вход недоступен",
+        "rate_limit_exceeded": "Слишком много попыток входа. Подождите и попробуйте снова.",
+        "sso_button": "Продолжить через {{provider}}",
+        "sso_failed": "Не удалось войти через этого провайдера. Повторите попытку.",
+        "subtitle": "Войдите в аккаунт оператора",
+        "title": "С возвращением"
+      },
+      "logout": "Выйти",
+      "no_store_access": {
+        "description": "Вы вошли в систему, но пока не добавлены ни в один магазин. Попросите администратора пригласить вас или войдите в другой аккаунт.",
+        "signed_in_as": "Вы вошли как {{email}}",
+        "title": "Нет доступа ни к одному магазину"
+      },
+      "reset_password": {
+        "confirm_password_label": "Повторите новый пароль",
+        "error": "Произошла ошибка. Повторите попытку.",
+        "missing_token_message": "В ссылке для сброса пароля отсутствует токен.",
+        "missing_token_title": "Недействительная ссылка для сброса",
+        "new_password_label": "Новый пароль",
+        "request_new_link": "Запросить новую ссылку",
+        "submit": "Сбросить пароль",
+        "submitting": "Сброс…",
+        "subtitle": "Введите новый пароль для аккаунта оператора.",
+        "title": "Создать новый пароль",
+        "token_invalid": "Ссылка недействительна или срок её действия истёк. Запросите новую."
+      }
+    },
+    "color_picker": { "no_color": "Без цвета" },
+    "common": {
+      "active": "Активен",
+      "adjust_search_or_filters": "Измените запрос или фильтры",
+      "all": "Все",
+      "and": "и",
+      "are_you_sure": "Вы уверены?",
+      "cancel": "Отмена",
+      "clear": "Очистить",
+      "comma_separated_hint": "Разделяйте значения запятыми.",
+      "default": "По умолчанию",
+      "delete_confirm_message": "Вы уверены? Это действие нельзя отменить.",
+      "deleted": "Удалено",
+      "empty_value": "—",
+      "inactive": "Неактивен",
+      "learn_more": "Подробнее",
+      "skip_to_content": "Перейти к содержимому",
+      "loading": "Загрузка…",
+      "next": "Далее",
+      "no": "Нет",
+      "no_results": "Ничего не найдено",
+      "combobox_more_results_one": "Не показан ещё 1 результат. Введите текст для поиска.",
+      "combobox_more_results_few": "Не показано ещё {{count}} результата. Введите текст для поиска.",
+      "combobox_more_results_many": "Не показано ещё {{count}} результатов. Введите текст для поиска.",
+      "combobox_more_results_other": "Не показано ещё {{count}} результата. Введите текст для поиска.",
+      "none": "Нет",
+      "optional": "Необязательно",
+      "or": "или",
+      "page_of": "Страница {{page}} из {{total}}",
+      "pick_date": "Выберите дату",
+      "prev": "Назад",
+      "prices": "Цены",
+      "remove_question": "Удалить?",
+      "required": "Обязательное поле",
+      "retry": "Повторить",
+      "search_placeholder": "Поиск…",
+      "searching": "Поиск…",
+      "soon": "Скоро",
+      "select_placeholder": "Выберите…",
+      "unsaved_changes": "Есть несохранённые изменения.",
+      "yes": "Да",
+      "done": "Готово",
+      "error": "Произошла ошибка."
+    },
+    "components": {
+      "address_block": { "not_provided": "Не указано" },
+      "address_form_dialog": {
+        "description": "Измените сведения об адресе.",
+        "edit_title": "Изменить адрес"
+      },
+      "bulk_action_bar": {
+        "default_error": "Не удалось выполнить массовую операцию",
+        "default_success": "Обновлено записей: {n}",
+        "selected": "Выбрано: {{count}}"
+      },
+      "channel_select": {
+        "placeholder": "Выберите канал продаж",
+        "all_channels": "Все каналы"
+      },
+      "command_palette": {
+        "create": {
+          "heading": "Создать",
+          "label": "{{noun}} — создать",
+          "nouns": {
+            "catalog": "Каталог",
+            "catalog_plural": "Каталоги",
+            "category": "Категория",
+            "category_plural": "Категории",
+            "collection": "Подборка",
+            "collection_plural": "Подборки",
+            "company": "Компания",
+            "company_plural": "Компании",
+            "customer": "Клиент",
+            "customer_group": "Группа клиентов",
+            "customer_group_plural": "Группы клиентов",
+            "customer_plural": "Клиенты",
+            "discount": "Скидка",
+            "discount_plural": "Скидки",
+            "gift_card": "Подарочная карта",
+            "gift_card_plural": "Подарочные карты",
+            "option_type": "Опция",
+            "option_type_plural": "Опции",
+            "order": "Заказ",
+            "order_plural": "Заказы",
+            "price_list": "Прайс-лист",
+            "price_list_plural": "Прайс-листы",
+            "product": "Товар",
+            "product_plural": "Товары",
+            "promotion": "Акция",
+            "promotion_plural": "Акции",
+            "seller": "Продавец",
+            "seller_plural": "Продавцы",
+            "stock_location": "Склад",
+            "stock_location_plural": "Склады",
+            "stock_transfer": "Перемещение запасов",
+            "stock_transfer_plural": "Перемещения запасов"
+          },
+          "verbs": "добавить,новый,создать"
+        },
+        "description": "Ищите товары, заказы и клиентов или выполните команду.",
+        "empty_hint": "Введите запрос или выберите команду ниже.",
+        "goto": "Перейти",
+        "goto_label": "Перейти: {{label}}",
+        "hints": {
+          "close": "закрыть",
+          "esc_key": "esc",
+          "navigate": "перемещение",
+          "select": "выбрать"
+        },
+        "no_results": "По запросу «{{query}}» ничего не найдено.",
+        "placeholder": "Поиск товаров, заказов, клиентов…",
+        "search_label": "Поиск…",
+        "title": "Поиск и команды"
+      },
+      "confirm_dialog": { "title": "Вы уверены?" },
+      "country_combobox": {
+        "empty": "Страны не найдены",
+        "placeholder": "Выберите страну",
+        "search_placeholder": "Поиск стран…"
+      },
+      "currency_select": {
+        "empty": "Валюты не найдены",
+        "placeholder": "Выберите валюту",
+        "search_placeholder": "Поиск валют…"
+      },
+      "custom_fields": {
+        "json_placeholder": "{ \"example\": \"value\" }"
+      },
+      "date_range_picker": {
+        "presets": {
+          "last_14_days": "Последние 14 дней",
+          "last_30_days": "Последние 30 дней",
+          "last_7_days": "Последние 7 дней",
+          "last_90_days": "Последние 90 дней",
+          "this_month": "Этот месяц",
+          "year_to_date": "С начала года"
+        }
+      },
+      "error_state": { "retry": "Повторить" },
+      "export_button": {
+        "all": {
+          "description": "Не учитывая фильтры, экспортировать все данные магазина.",
+          "title": "Все записи"
+        },
+        "description": "Подготовим CSV в фоновом режиме и автоматически загрузим его, когда он будет готов. Если подготовка затянется, мы также отправим ссылку по электронной почте.",
+        "downloaded": "Экспорт загружен",
+        "email_fallback": "Экспорт ещё обрабатывается. Мы отправим ссылку, когда он будет готов.",
+        "failed": "Не удалось экспортировать данные: {{message}}",
+        "filtered": {
+          "count_one": "Экспортировать {{formattedCount}} запись по текущему фильтру.",
+          "count_few": "Экспортировать {{formattedCount}} записи по текущему фильтру.",
+          "count_many": "Экспортировать {{formattedCount}} записей по текущему фильтру.",
+          "count_other": "Экспортировать {{formattedCount}} записи по текущему фильтру.",
+          "no_filter": "Фильтры не заданы — будут экспортированы все записи.",
+          "title": "Текущий фильтр",
+          "unknown_count": "Экспортировать записи, соответствующие текущему фильтру."
+        },
+        "preparing": "Подготовка экспорта…",
+        "title": "Экспорт в CSV"
+      },
+      "file_upload": {
+        "attached": "Файл прикреплён",
+        "browse": "Выбрать файлы",
+        "drop_image_label": "Перетащите изображение сюда или нажмите, чтобы выбрать файл",
+        "drop_label": "Перетащите файл сюда или нажмите, чтобы выбрать его",
+        "invalid_type": "Этот тип файла не поддерживается (ожидается: {{accept}})",
+        "upload_failed": "Не удалось загрузить файл: {{message}}",
+        "uploading": "Загрузка…"
+      },
+      "import_button": {
+        "delimiter_label": "Разделитель столбцов",
+        "delimiters": {
+          "comma": "Запятая (,)" ,
+          "pipe": "Вертикальная черта (|)",
+          "semicolon": "Точка с запятой (;)",
+          "tab": "Табуляция"
+        },
+        "description": "Загрузите CSV-файл. На следующем шаге сопоставьте его столбцы с полями.",
+        "download_example": "Скачать пример CSV",
+        "download_template": "Скачать шаблон CSV",
+        "drop_label": "Перетащите CSV-файл сюда или нажмите, чтобы выбрать его",
+        "example_failed": "Не удалось скачать пример: {{message}}",
+        "failed": "Не удалось импортировать данные: {{message}}",
+        "submit": "Продолжить",
+        "template_failed": "Не удалось скачать шаблон: {{message}}",
+        "title": "Импорт из CSV"
+      },
+      "json_preview_drawer": {
+        "collapse_depth": "Свернуть до уровня",
+        "copied": "Скопировано",
+        "copy_all": "Копировать всё",
+        "depth": "Уровень {{level}}",
+        "failed_to_load": "Не удалось загрузить: {{message}}",
+        "open_raw": "Открыть исходный ответ",
+        "raw": "Исходные данные",
+        "title": "JSON"
+      },
+      "locale_select": {
+        "empty": "Языки не найдены",
+        "multi_placeholder": "Добавить языки…",
+        "placeholder": "Выберите язык",
+        "search_placeholder": "Поиск языков…"
+      },
+      "market_combobox": {
+        "empty": "Рынки не найдены",
+        "search_placeholder": "Поиск рынков…"
+      },
+      "media": { "remove_tooltip": "Удалить изображение" },
+      "media_preview": { "video_title": "Предпросмотр видео" },
+      "metadata_card": {
+        "copy_reference": "Скопировать ключ {{system}}",
+        "empty_description": "Приложения и интеграции заполняют эти данные автоматически.",
+        "empty_title": "Метаданных нет",
+        "external_references": "Внешние ссылки",
+        "title": "Метаданные",
+        "view": "Просмотреть метаданные"
+      },
+      "page_header": {
+        "copy_id": "Скопировать ID",
+        "copy_number": "Скопировать номер",
+        "view_as_json": "Показать как JSON"
+      },
+      "pagination": {
+        "first_page": "Перейти на первую страницу",
+        "last_page": "Перейти на последнюю страницу",
+        "next_page": "Перейти на следующую страницу",
+        "previous_page": "Перейти на предыдущую страницу",
+        "range": "{{from}}–{{to}} из {{count}}",
+        "rows_per_page": "Строк на странице"
+      },
+      "preferences_form": {
+        "comma_separated_hint": "Разделяйте значения запятыми.",
+        "tiers": {
+          "add_tier": "Добавить уровень",
+          "empty": "Уровни не добавлены. До добавления уровня действует базовая ставка.",
+          "header_threshold": "Сумма заказа ≥",
+          "header_value": "Скидка",
+          "label": "Уровни",
+          "remove_tier": "Удалить уровень"
+        },
+        "unlimited": "Без ограничений"
+      },
+      "rich_text_editor": {
+        "blockquote": "Цитата",
+        "bold": "Полужирный",
+        "bullet_list": "Маркированный список",
+        "image": "Изображение",
+        "italic": "Курсив",
+        "link": "Ссылка",
+        "link_url_prompt": "URL-адрес",
+        "ordered_list": "Нумерованный список",
+        "placeholder": "Введите текст…",
+        "redo": "Повторить",
+        "strikethrough": "Зачёркнутый",
+        "undo": "Отменить"
+      },
+      "secret_input": {
+        "new_value_placeholder": "Новое значение",
+        "replace": "Заменить",
+        "stored_help": "Значение хранится на сервере. Нажмите «Заменить», чтобы обновить его."
+      },
+      "state_combobox": {
+        "empty": "Регионы не найдены",
+        "placeholder": "Выберите регион",
+        "search_placeholder": "Поиск регионов…"
+      },
+      "table_toolbar": {
+        "add_filter": "Добавить фильтр",
+        "any_field": "Любое поле: {{field}}",
+        "ascending": "По возрастанию",
+        "clear_all": "Очистить всё",
+        "columns_tooltip": "Столбцы",
+        "date_presets": {
+          "all": "Любая дата",
+          "custom": "Выбрать даты",
+          "last_30_days": "Последние 30 дней",
+          "last_7_days": "Последние 7 дней",
+          "last_month": "Прошлый месяц",
+          "this_month": "Этот месяц",
+          "today": "Сегодня"
+        },
+        "date_range_end": "Конец",
+        "date_range_start": "Начало",
+        "descending": "По убыванию",
+        "filter_by": "Фильтровать по…",
+        "filter_date_placeholder": "Выберите дату",
+        "filter_select_placeholder": "Выберите…",
+        "filter_text_placeholder": "Фильтр…",
+        "filter_to_placeholder": "Фильтр до…",
+        "n_selected": "Выбрано: {{count}}",
+        "only": "Только",
+        "operators": {
+          "after": "позже",
+          "before": "раньше",
+          "contains": "содержит",
+          "does_not_equal": "не равно",
+          "ends_with": "заканчивается на",
+          "equals": "равно",
+          "greater_than": "больше",
+          "greater_than_or_equal": "больше или равно",
+          "is": "равно",
+          "is_any_of": "любое из",
+          "is_none_of": "ни одно из",
+          "is_not": "не равно",
+          "is_not_set": "не задано",
+          "is_set": "задано",
+          "less_than": "меньше",
+          "less_than_or_equal": "меньше или равно",
+          "on_or_after": "в эту дату или позже",
+          "on_or_before": "в эту дату или раньше",
+          "starts_with": "начинается с"
+        },
+        "order": "Порядок",
+        "remove_filter": "Удалить фильтр",
+        "reset_to_default": "Сбросить настройки",
+        "search_placeholder": "Поиск…",
+        "select_all": "Выбрать всё",
+        "sort_by": "Сортировать по",
+        "sort_tooltip": "Сортировка",
+        "visible_columns": "Видимые столбцы"
+      },
+      "tag_combobox": {
+        "create_option": "Создать тег «{{tag}}»",
+        "empty_hint": "Введите название и нажмите Enter, чтобы создать тег",
+        "placeholder": "Введите теги…"
+      },
+      "theme_toggle": {
+        "dark": "Тёмная",
+        "label": "Тема",
+        "light": "Светлая",
+        "system": "Системная"
+      },
+      "wizard": {
+        "discard_cancel": "Продолжить редактирование",
+        "discard_confirm": "Отменить изменения",
+        "discard_message": "Все введённые данные будут потеряны. Это действие нельзя отменить.",
+        "discard_title": "Отменить создание черновика?"
+      }
+    },
+    "currency_amounts": {
+      "amount_in_currency": "Сумма в {{currency}}",
+      "help": "Если валюта не указана, способ доставки в ней недоступен.",
+      "label": "Сумма",
+      "required": "Укажите сумму хотя бы в одной валюте."
+    },
+    "custom_field_definitions": {
+      "errors": {
+        "failed_to_create": "Не удалось создать поле",
+        "failed_to_delete": "Не удалось удалить поле",
+        "failed_to_update": "Не удалось обновить поле"
+      },
+      "messages": {
+        "created": "Поле создано",
+        "deleted": "Поле удалено",
+        "updated": "Поле обновлено"
+      }
+    },
+    "errors": {
+      "failed_to_create": "Не удалось создать",
+      "failed_to_delete": "Не удалось удалить",
+      "failed_to_load": "Не удалось загрузить",
+      "failed_to_load_customer": "Не удалось загрузить клиента",
+      "failed_to_load_order": "Не удалось загрузить заказ",
+      "failed_to_load_product": "Не удалось загрузить товар",
+      "failed_to_revoke_key": "Не удалось отозвать ключ",
+      "failed_to_save": "Не удалось сохранить",
+      "failed_to_send_invitation": "Не удалось отправить приглашение",
+      "failed_to_update": "Не удалось обновить",
+      "failed_to_update_profile": "Не удалось обновить профиль",
+      "failed_to_update_staff": "Не удалось обновить данные сотрудника",
+      "failed_to_update_store": "Не удалось обновить настройки магазина",
+      "generic": "Произошла ошибка",
+      "label_download_failed": "Не удалось скачать этикетку",
+      "network": "Ошибка сети. Повторите попытку.",
+      "not_found": "Не найдено",
+      "required": "Обязательное поле",
+      "unauthorized": "У вас нет разрешения на это действие",
+      "unexpected": "Произошла непредвиденная ошибка",
+      "unexpected_retry": "Произошла непредвиденная ошибка. Повторите попытку."
+    },
+    "fields": {
+      "active": { "label": "Активен" },
+      "address": {
+        "address1": { "label": "Адрес" },
+        "address2": { "label": "Квартира, офис и т. п." },
+        "is_default_billing": { "label": "Платёжный адрес по умолчанию" },
+        "is_default_shipping": { "label": "Адрес доставки по умолчанию" },
+        "label": { "label": "Метка", "placeholder": "Например, дом или работа" },
+        "postal_code": { "label": "Почтовый индекс" }
+      },
+      "address1": { "label": "Адрес, строка 1" },
+      "address2": { "label": "Адрес, строка 2" },
+      "amount": { "label": "Сумма" },
+      "city": { "label": "Город" },
+      "code": { "label": "Код" },
+      "company": { "label": "Компания" },
+      "completed_at": { "label": "Дата завершения" },
+      "contact_email": { "label": "Контактная электронная почта" },
+      "country_code": { "label": "Страна" },
+      "created_at": { "label": "Дата создания" },
+      "currency": { "label": "Валюта" },
+      "description": { "label": "Описание" },
+      "discount": { "label": "Скидка" },
+      "email": { "label": "Электронная почта" },
+      "enabled": { "label": "Включено" },
+      "ends_at": { "label": "Дата окончания" },
+      "expires_at": { "label": "Истекает" },
+      "first_name": { "label": "Имя" },
+      "kind": { "label": "Тип" },
+      "label": { "label": "Название" },
+      "last_name": { "label": "Фамилия" },
+      "login": { "email": { "placeholder": "admin@example.com" } },
+      "media": {
+        "alt": {
+          "label": "Альтернативный текст",
+          "placeholder": "Опишите изображение для доступности и SEO"
+        },
+        "external_video_url": {
+          "help": "Вставьте ссылку на YouTube или Vimeo.",
+          "label": "Ссылка на видео",
+          "placeholder": "https://www.youtube.com/watch?v=..."
+        },
+        "poster": {
+          "help": "Кадр, который показывается до запуска видео. Оставьте поле пустым, чтобы использовать изображение видеосервиса, если оно есть.",
+          "label": "Постер видео"
+        }
+      },
+      "meta_description": { "label": "Метаописание" },
+      "meta_title": { "label": "Мета-заголовок" },
+      "name": { "label": "Название" },
+      "package_type": {
+        "name": { "label": "Название" },
+        "kind": {
+          "label": "Тип",
+          "help": "Только коробка может использоваться как упаковка для товара."
+        },
+        "length": { "label": "Длина" },
+        "width": { "label": "Ширина" },
+        "height": { "label": "Высота" },
+        "dimensions_unit": { "label": "Единица измерения" },
+        "dimensions": {
+          "help": "Размеры используются для расчёта объёмного веса перевозчиком и сравнения тарифов по объёму в кубических метрах."
+        },
+        "weight": {
+          "label": "Вес пустой упаковки",
+          "help": "Вес самой упаковки прибавляется к весу её содержимого."
+        },
+        "max_weight": { "label": "Максимальный вес", "help": "Максимальный вес содержимого." },
+        "weight_unit": { "label": "Единица измерения" },
+        "default": {
+          "label": "Упаковка по умолчанию",
+          "help": "Эта упаковка используется при расчёте стоимости доставки. По умолчанию может быть только один тип упаковки."
+        }
+      },
+      "number": { "label": "Номер" },
+      "password": { "label": "Пароль" },
+      "permalink": { "label": "Постоянная ссылка" },
+      "phone": { "label": "Телефон" },
+      "pretty_name": { "label": "Полное имя" },
+      "quantity": { "label": "Количество" },
+      "setup": {
+        "country_code": {
+          "help": "Страна отправки. Магазин сможет продавать по всему миру; эта настройка задаёт начальную валюту, склад и зоны доставки. Позже их можно изменить.",
+          "label": "Страна",
+          "placeholder": "Поиск стран"
+        },
+        "currency": {
+          "help": "Валюта магазина по умолчанию. Позже можно добавить другие.",
+          "label": "Валюта",
+          "placeholder": "Поиск валют"
+        },
+        "locale": {
+          "help": "Язык магазина по умолчанию. Позже можно добавить другие.",
+          "label": "Язык"
+        },
+        "password_confirmation": { "label": "Повторите пароль" },
+        "sample_data": {
+          "help": "В фоновом режиме добавит демонстрационные товары, категории, клиентов и заказы, чтобы вы могли изучить панель. Это займёт несколько минут и загрузит изображения товаров.",
+          "label": "Загрузить демонстрационные данные"
+        },
+        "store_name": { "label": "Название магазина" }
+      },
+      "shipping": { "label": "Доставка" },
+      "slug": { "label": "Адресная метка" },
+      "starts_at": { "label": "Дата начала" },
+      "state_code": { "label": "Штат / область" },
+      "state_name": { "label": "Штат / область" },
+      "status": { "label": "Статус" },
+      "stock_location": {
+        "active": {
+          "help": "Неактивные склады нельзя выбрать для отгрузки.",
+          "label": "Активен"
+        },
+        "admin_name": {
+          "label": "Внутреннее название",
+          "placeholder": "Необязательно — видно только оператору"
+        },
+        "backorderable_default": {
+          "help": "Для новых остатков по умолчанию разрешён заказ товара, которого нет на складе.",
+          "label": "Разрешать заказ отсутствующего товара по умолчанию"
+        },
+        "default": {
+          "help": "Новые остатки будут добавляться на этот склад. Складом по умолчанию может быть только один.",
+          "label": "Склад по умолчанию"
+        },
+        "kind": { "label": "Тип" },
+        "name": { "placeholder": "Склад в Москве" },
+        "pickup_enabled": {
+          "help": "Покупатели смогут забрать заказ в этом месте при оформлении.",
+          "label": "Разрешить самовывоз"
+        },
+        "pickup_instructions": {
+          "label": "Инструкции для самовывоза",
+          "placeholder": "Куда покупателю прийти за заказом."
+        },
+        "pickup_ready_in_minutes": { "label": "Будет готов через (минут)" , "placeholder": "60" },
+        "pickup_stock_policy": { "label": "Правило учёта остатков" },
+        "propagate_all_variants": {
+          "help": "Создать остатки на этом складе для всех вариантов товаров.",
+          "label": "Автоматически создать остатки для всех вариантов"
+        },
+        "returns_enabled": {
+          "help": "Возвращённые товары поступают на этот склад. Отключите параметр, если возвраты проверяются в другом месте.",
+          "label": "Принимать возвраты здесь"
+        }
+      },
+      "storefront_visible": {
+        "help": "Если отключено, параметр виден только оператору (заказы вручную и через внутреннюю панель).",
+        "label": "Показывать на витрине"
+      },
+      "subtotal": { "label": "Промежуточный итог" },
+      "tax": { "label": "Налог" },
+      "total": { "label": "Итого" },
+      "updated_at": { "label": "Дата обновления" },
+      "zipcode": { "label": "Почтовый индекс" },
+      "product": {
+        "available_on": { "label": "Дата публикации" },
+        "category_ids": { "label": "Категории" },
+        "channels": { "label": "Каналы продаж" },
+        "collection_ids": {
+          "help": "Здесь можно выбрать только ручные подборки; автоматические формируются по своим правилам.",
+          "label": "Подборки"
+        },
+        "delivery_profile_id": {
+          "help": "Определяет зоны и способы доставки, доступные для этого товара.",
+          "label": "Профиль доставки"
+        },
+        "description": { "label": "Описание", "placeholder": "Опишите товар…" },
+        "discontinue_on": { "label": "Дата снятия с продажи" },
+        "make_active_at": { "label": "Дата активации" },
+        "name": { "label": "Название", "placeholder": "Название товара" },
+        "product_type_id": {
+          "help": "Определяет способы доставки, доступные при оформлении заказа.",
+          "label": "Тип товара"
+        },
+        "seller": { "label": "Продавец" },
+        "tags": { "label": "Теги" }
+      },
+      "variant": {
+        "backorder_limit": {
+          "help": "Максимальное количество единиц сверх доступного остатка — ограничивает предзаказы и заказы отсутствующего товара. Оставьте пустым, чтобы не задавать ограничение.",
+          "label": "Лимит заказов сверх остатка",
+          "placeholder": "Без ограничений"
+        },
+        "barcode": { "label": "Штрихкод" },
+        "country_of_origin": { "label": "Страна происхождения" },
+        "customs_description": { "label": "Описание для таможни", "placeholder": "Краткое описание товара" },
+        "depth": { "label": "Глубина" },
+        "dimensions_unit": { "label": "Единица измерения" },
+        "height": { "label": "Высота" },
+        "hs_code": { "label": "Код ТН ВЭД", "placeholder": "Например, 640411" },
+        "preorder_ships_at": {
+          "help": "Ожидаемая дата отправки предзаказов. Покупателю показывается как срок доставки; после этой даты предзаказ завершается.",
+          "label": "Отправка до",
+          "placeholder": "Выберите дату"
+        },
+        "preorderable": {
+          "help": "Разрешите предзаказ товара до его поступления на склад. Ограничьте количество лимитом заказов сверх остатка, укажите ожидаемый остаток или оставьте поле пустым без ограничений.",
+          "label": "Доступен для предзаказа"
+        },
+        "sku": { "label": "Артикул (SKU)", "placeholder": "PRODUCT-RED-S" },
+        "weight": { "label": "Вес" },
+        "weight_unit": { "label": "Единица измерения" },
+        "width": { "label": "Ширина" },
+        "minimum_order_quantity": {
+          "label": "Минимальное количество в заказе",
+          "placeholder": "Без минимума",
+          "help": "Минимальное количество товара в заказе. Оставьте пустым, если минимум не нужен."
+        },
+        "order_multiple": {
+          "label": "Кратность заказа",
+          "placeholder": "Без кратности",
+          "help": "Шаг изменения количества от минимального. Оставьте пустым, чтобы разрешить любое количество."
+        },
+        "purchase_unit": {
+          "label": "Единица заказа",
+          "options": { "unit": "Штуки", "carton": "Короба" }
+        },
+        "units_per_carton": { "label": "Штук в коробе" },
+        "quantity_rule_invalid": "Введите целое число больше нуля или оставьте поле пустым.",
+        "carton_package_type_id": {
+          "label": "Короб",
+          "help": "Короб, в который упаковывается товар. Его размер общий для всех товаров с такой упаковкой."
+        },
+        "carton_weight": { "label": "Вес короба", "help": "Вес одного короба с товаром." },
+        "cartons_per_pallet": { "label": "Коробов на паллете" },
+        "carton_weight_invalid": "Введите вес короба больше нуля или оставьте поле пустым."
+      },
+      "minimum_order_quantity": {
+        "label": "Минимальное количество в заказе",
+        "help": "Минимальное количество товара, которое можно заказать. Оставьте поле пустым, если минимум не нужен."
+      },
+      "order_multiple": {
+        "label": "Кратность заказа",
+        "help": "Шаг изменения количества от минимального. Оставьте поле пустым, чтобы разрешить любое количество."
+      },
+      "store": {
+        "digital_asset_authorized_clicks": { "label": "Разрешённое число скачиваний" },
+        "digital_asset_authorized_days": { "label": "Дней доступно для скачивания" }
+      }
+    },
+    "image_upload": {
+      "remove_cta": "Убрать",
+      "replace_cta": "Заменить изображение",
+      "upload_cta": "Загрузить изображение",
+      "upload_failed": "Не удалось загрузить изображение",
+      "uploading": "Загрузка…"
+    },
+    "imports": {
+      "download_original": "Скачать исходный файл",
+      "failed": {
+        "description": "Не удалось обработать файл.",
+        "title": "Не удалось импортировать данные"
+      },
+      "failed_rows": {
+        "error": "Ошибка",
+        "hide_data": "Скрыть данные строки",
+        "next_page": "Следующая страница",
+        "prev_page": "Предыдущая страница",
+        "row_number": "Строка",
+        "title": "Строки с ошибками",
+        "view_data": "Показать данные строки"
+      },
+      "load_failed": "Не удалось загрузить импорт.",
+      "mapping": {
+        "description": "Сопоставьте столбцы файла с полями {{type}}.",
+        "field": "Поле",
+        "file_column": "Столбец файла",
+        "missing_required": "Для продолжения сопоставьте обязательные поля: {{fields}}",
+        "not_mapped": "Не сопоставлено",
+        "required": "Обязательно",
+        "sample": "Пример",
+        "start": "Начать импорт",
+        "starting": "Запуск…",
+        "title": "Сопоставление столбцов"
+      },
+      "processing": {
+        "failed_count": "Ошибок: {{failed}}",
+        "note": "Можно закрыть эту страницу — импорт продолжится в фоновом режиме.",
+        "preparing": "Подготовка строк…",
+        "progress": "Обработано строк: {{processed}} из {{total}}",
+        "retrying": "Повторная обработка строк с ошибками · осталось {{remaining}}",
+        "title": "Обработка строк"
+      },
+      "results": {
+        "completed_title": "Импорт завершён",
+        "retry_failed": "Повторить обработку строк с ошибками ({{failed}})",
+        "retrying": "Повторная обработка…",
+        "summary": "Импортировано строк: {{completed}} · ошибок: {{failed}}",
+        "view_records": "Показать: {{type}}"
+      },
+      "status": {
+        "completed": "Завершён",
+        "completed_mapping": "В очереди",
+        "failed": "Ошибка",
+        "mapping": "Сопоставление",
+        "pending": "Ожидает обработки",
+        "processing": "Обрабатывается"
+      },
+      "step_descriptions": {
+        "complete": "Импорт завершён. Проверьте созданные и обновлённые записи.",
+        "map_fields": "Сопоставьте каждый столбец файла с полем Spree.",
+        "process_rows": "Импортируем строки. Это может занять несколько минут."
+      },
+      "steps": {
+        "complete": "Завершение",
+        "map_fields": "Сопоставление полей",
+        "process_rows": "Обработка строк"
+      },
+      "try_again": "Повторить",
+      "types": {
+        "customers": "Клиенты",
+        "price_list_prices": "Цены прайс-листа",
+        "product_translations": "Переводы товаров",
+        "products": "Товары",
+        "purchase_orders": "Заказы на закупку"
+      },
+      "wizard_title": "Импорт"
+    },
+    "invitation": {
+      "accept": "Принять приглашение",
+      "accepting": "Принятие…",
+      "could_not_accept": "Не удалось принять приглашение",
+      "create_and_accept": "Создать аккаунт и принять",
+      "create_to_accept": ". Создайте аккаунт, чтобы принять приглашение.",
+      "generic_error_message": "Произошла ошибка. Повторите попытку.",
+      "generic_error_title": "Не удалось загрузить приглашение",
+      "invited_as_role": " в роли {{role}}",
+      "invited_by": "Вас пригласил {{email}}",
+      "invited_generic": "Вы получили приглашение",
+      "join_store": "Присоединиться к магазину {{store}}",
+      "loading": "Загрузка приглашения…",
+      "missing_token_message": "Ссылка выглядит неполной. Попросите отправителя прислать её ещё раз.",
+      "missing_token_title": "В ссылке нет токена приглашения",
+      "not_found_message": "Срок действия приглашения истёк, оно было отозвано или уже принято. Попросите отправителя прислать новое приглашение.",
+      "not_found_title": "Приглашение не найдено",
+      "password_confirmation": "Повторите пароль",
+      "sign_in_and_accept": "Войти и принять",
+      "sign_in_to_accept": ". Войдите, чтобы принять приглашение.",
+      "signed_in_as_another_account": "Вы вошли как {{email}}, но приглашение предназначено для {{invitee}}. Выйдите из аккаунта, чтобы принять его.",
+      "signed_in_as_invitee": ". Вы вошли как {{email}}."
+    },
+    "media_picker": {
+      "confirm": "Добавить выбранное",
+      "description": "Выберите файлы из медиатеки или загрузите новые.",
+      "empty": "Медиатека пуста. Загрузите файл, чтобы начать.",
+      "no_results": "По вашему запросу файлы не найдены.",
+      "search_placeholder": "Поиск по названию…",
+      "selected_count_one": "Выбрано: {{count}}",
+      "selected_count_few": "Выбрано: {{count}}",
+      "selected_count_many": "Выбрано: {{count}}",
+      "selected_count_other": "Выбрано: {{count}}",
+      "title": "Медиатека",
+      "upload": "Загрузить"
+    },
+    "messages": {
+      "address_removed": "Адрес удалён",
+      "address_saved": "Адрес сохранён",
+      "copied_to_clipboard": "Скопировано в буфер обмена",
+      "created": "Создано",
+      "customer_deleted": "Клиент удалён",
+      "customer_saved": "Данные клиента сохранены",
+      "digital_asset_removed": "Файл удалён",
+      "digital_asset_saved": "Файл сохранён",
+      "digital_link_reset": "Доступ к скачиванию восстановлен",
+      "digital_links_email_sent": "Письмо со ссылкой на скачивание отправлено",
+      "gift_card_created": "Подарочная карта создана",
+      "invitation_accepted": "Добро пожаловать в Spree",
+      "invitation_resent": "Приглашение отправлено повторно",
+      "invitation_sent": "Приглашение отправлено",
+      "key_created": "Ключ создан",
+      "key_deleted": "Ключ удалён",
+      "key_revoked": "Ключ отозван",
+      "key_updated": "Ключ обновлён",
+      "order_saved": "Заказ сохранён",
+      "payment_method_saved": "Способ оплаты сохранён",
+      "product_created": "Товар создан",
+      "product_deleted": "Товар удалён",
+      "product_saved": "Товар сохранён",
+      "profile_updated": "Профиль обновлён",
+      "promotion_created": "Акция создана",
+      "promotion_deleted": "Акция удалена",
+      "promotion_saved": "Акция сохранена",
+      "removed": "Удалено",
+      "saved": "Сохранено",
+      "settings_updated": "Настройки обновлены",
+      "stock_location_saved": "Склад сохранён",
+      "store_credit_removed": "Средства на балансе магазина удалены",
+      "store_credit_saved": "Средства на балансе магазина сохранены",
+      "store_settings_updated": "Настройки магазина обновлены",
+      "tax_category_saved": "Налоговая категория сохранена",
+      "updated": "Обновлено"
+    },
+    "package_types": {
+      "table_title": "Типы упаковки",
+      "search_placeholder": "Поиск упаковки",
+      "empty": "Упаковка ещё не добавлена. Укажите коробки, короба и паллеты для отправки товаров и оптовых заказов.",
+      "add_cta": "Добавить тип упаковки",
+      "default_badge": "По умолчанию",
+      "edit_sheet_title": "Тип упаковки",
+      "create_description": "Коробка, короб, паллета или контейнер для упаковки товаров.",
+      "edit_description": "Размеры товаров в коробе берутся из этого типа упаковки. Измените размеры здесь, чтобы обновить их для всех таких товаров.",
+      "dimensions_column": "Размеры",
+      "volume_column": "Объём",
+      "kinds": {
+        "box": "Коробка",
+        "envelope": "Конверт",
+        "carton": "Короб",
+        "pallet": "Паллета",
+        "container": "Контейнер"
+      },
+      "messages": {
+        "added": "Тип упаковки добавлен",
+        "updated": "Тип упаковки обновлён",
+        "deleted": "Тип упаковки удалён"
+      },
+      "delete_confirm": {
+        "title": "Удалить тип упаковки?",
+        "message": "Тип «{{name}}» будет удалён. Сначала переупакуйте товары, для которых он используется."
+      },
+      "validation": { "non_negative": "значение должно быть не меньше нуля" },
+      "description": "Коробки, короба и паллеты для отправки товаров, а также их размеры и вес для расчёта доставки."
+    },
+    "product_types": {
+      "add_cta": "Добавить тип товара",
+      "add_sheet_title": "Новый тип товара",
+      "affects_new_only": {
+        "description": "Изменение типов опций и категорий влияет на товары, создаваемые в дальнейшем. Уже созданные товары сохранят прежние значения. Дополнительные поля ниже отображаются у всех товаров этого типа.",
+        "title": "Изменения применяются к новым товарам"
+      },
+      "apply_to_products": {
+        "confirm_label": "Применить",
+        "cta_one": "Применить к {{count}} существующему товару",
+        "cta_few": "Применить к {{count}} существующим товарам",
+        "cta_many": "Применить к {{count}} существующим товарам",
+        "cta_other": "Применить к {{count}} существующему товару",
+        "message_one": "К {{count}} товару будут добавлены недостающие типы опций и категории. Ничего не будет удалено.",
+        "message_few": "К {{count}} товарам будут добавлены недостающие типы опций и категории. Ничего не будет удалено.",
+        "message_many": "К {{count}} товарам будут добавлены недостающие типы опций и категории. Ничего не будет удалено.",
+        "message_other": "К {{count}} товару будут добавлены недостающие типы опций и категории. Ничего не будет удалено.",
+        "title": "Применить к существующим товарам"
+      },
+      "create_description": "Объедините товары и задайте доступные способы доставки.",
+      "create_label": "Создать тип товара",
+      "custom_delivery_profile": "Настраиваемый",
+      "default_delivery_profile": "Профиль магазина по умолчанию",
+      "delete_confirm": {
+        "message": "Удалить тип «{{name}}»? Нельзя удалить тип, который используется в товарах.",
+        "title": "Удалить тип товара"
+      },
+      "edit_description": "Измените название или способы доставки товаров этого типа.",
+      "edit_sheet_title": "Изменить тип товара",
+      "empty": "Типов товаров пока нет",
+      "messages": {
+        "applied_to_products": "Применение к существующим товарам",
+        "created": "Тип товара создан",
+        "deleted": "Тип товара удалён",
+        "updated": "Тип товара обновлён"
+      },
+      "no_categories": "Категорий пока нет",
+      "no_option_types": "Типов опций пока нет",
+      "option_type_search_placeholder": "Поиск типов опций",
+      "search_placeholder": "Поиск типов товаров"
+    },
+    "calculators": {
+      "default_refund_amount": "Сумма возврата по умолчанию",
+      "default_tax": "Налог по умолчанию",
+      "digital_delivery": "Цифровая доставка",
+      "flat_percent_item_total": "Процент от стоимости товаров",
+      "flat_rate": "Фиксированная ставка",
+      "flexi_rate": "Гибкая ставка",
+      "per_item": "За единицу товара",
+      "percent_on_line_item": "Процент от позиции заказа",
+      "price_sack": "Ставка по порогу цены",
+      "tiered_flat_rate": "Фиксированная ставка по уровням",
+      "tiered_percent": "Процентная ставка по уровням"
+    },
+    "stock_levels": {
+      "messages": { "stock_level_deleted": "Остаток удалён", "stock_updated": "Остатки обновлены" }
+    },
+    "option_types": {
+      "columns": { "values": "Значения" },
+      "kinds": { "buttons": "Кнопки", "color_swatch": "Образец цвета", "dropdown": "Выпадающий список" },
+      "messages": { "created": "Тип опции создан", "deleted": "Тип опции удалён", "updated": "Тип опции обновлён" },
+      "table": { "empty": "Типов опций пока нет", "search_placeholder": "Поиск по названию…" },
+      "value_count_one": "{{count}} значение",
+      "value_count_few": "{{count}} значения",
+      "value_count_many": "{{count}} значений",
+      "value_count_other": "{{count}} значения"
+    },
+    "media_library": { "download": "Скачать" },
+    "catalogs": {
+      "terms": {
+        "title": "Коммерческие условия",
+        "description": "Минимальный заказ для покупателей по этому соглашению.",
+        "no_rule_placeholder": "Без правила",
+        "minimums_title": "Минимальная сумма заказа",
+        "minimums_description": "Минимальная сумма всего заказа для каждой валюты.",
+        "minimums_empty": "Минимальная сумма не задана. Покупатель может оформить заказ на любую сумму.",
+        "minimum_amount_label": "Минимальная сумма",
+        "validation": {
+          "positive_integer": "Введите целое число больше нуля или оставьте поле пустым.",
+          "currency_taken": "Для этой валюты минимальная сумма уже задана.",
+          "positive_amount": "Введите сумму больше нуля.",
+          "fix_terms": "Исправьте отмеченные правила количества перед сохранением."
+        },
+        "mixed": "Разные значения",
+        "inherits": "По умолчанию",
+        "default_help": "Применяется ко всем товарам каталога, если для товара не задано отдельное правило.",
+        "column_minimum": "Минимум",
+        "column_multiple": "Кратность",
+        "help": {
+          "minimum": "Минимальное количество одного товара в заказе. Если количество меньше, заказ не будет принят; будут показаны ближайшие допустимые значения. Количество не округляется автоматически.",
+          "multiple": "Шаг изменения количества. При кратности 24 можно заказать 24, 48 или 72 единицы, но не 30. Шаг отсчитывается от минимума: при минимуме 50 и кратности 24 допустимы 50, 74 и 98.",
+          "order_minimum": "Минимальная сумма товаров во всём заказе без доставки и налогов. Покупатель видит, сколько не хватает, и сможет оформить заказ только после достижения минимума."
+        }
+      }
+    },
+    "types": {
+      "calculator": {
+        "default_refund_amount": { "name": "Сумма возврата по умолчанию", "description": "Возвращает сумму, уплаченную за возвращённые товары" },
+        "default_tax": { "name": "Налог по умолчанию", "description": "Применяет ставку налога к налогооблагаемой сумме" },
+        "digital_delivery": { "name": "Цифровая доставка", "description": "Без стоимости доставки — заказ предоставляется в цифровом виде" },
+        "flat_percent_item_total": { "name": "Процент от стоимости товаров", "description": "Процент от общей стоимости товаров в заказе" },
+        "flat_rate": { "name": "Фиксированная ставка", "description": "Одна фиксированная сумма независимо от состава заказа" },
+        "flexi_rate": { "name": "Гибкая ставка", "description": "Базовая сумма плюс сумма за каждую единицу товара" },
+        "per_item": { "name": "За единицу товара", "description": "Фиксированная сумма за каждый товар в заказе" },
+        "percent_on_line_item": { "name": "Процент от позиции заказа", "description": "Процент от стоимости каждой позиции заказа" },
+        "price_sack": { "name": "Ставка по порогу цены", "description": "Одна сумма ниже порога и другая — начиная с порога" },
+        "tiered_flat_rate": { "name": "Фиксированная ставка по уровням", "description": "Фиксированная сумма, меняющаяся в зависимости от суммы заказа" },
+        "tiered_percent": { "name": "Процентная ставка по уровням", "description": "Процент, меняющийся в зависимости от суммы заказа" }
+      },
+      "collection_rule": {
+        "available_on": { "name": "Недавно опубликованные", "description": "Товары, опубликованные за последние N дней" },
+        "sale": { "name": "Со скидкой", "description": "Товары, цена которых ниже прежней цены" },
+        "tag": { "name": "Тег", "description": "Товары с соответствующим тегом" }
+      },
+      "commission_rule": {
+        "category_rule": { "name": "Категория", "description": "Комиссия применяется только к товарам из выбранных категорий и вложенных в них категорий" },
+        "item_total_rule": { "name": "Сумма продажи", "description": "Комиссия применяется только к продажам в заданном диапазоне стоимости" },
+        "product_rule": { "name": "Товар", "description": "Комиссия применяется только к выбранным товарам" },
+        "seller_rule": { "name": "Продавец", "description": "Комиссия применяется только к продажам выбранных продавцов" }
+      },
+      "delivery_method_rule": {
+        "channel_rule": { "name": "Канал продаж", "description": "Предлагать способ доставки только в выбранных каналах продаж" },
+        "company_rule": { "name": "Компания", "description": "Предлагать способ доставки только заказам от имени компании или только остальным заказам" },
+        "excluded_products_rule": { "name": "Исключённые товары", "description": "Скрыть способ доставки, если в заказе есть любой из этих товаров" },
+        "item_total_rule": { "name": "Стоимость товаров", "description": "Предлагать способ доставки только при сумме заказа в заданном диапазоне" },
+        "volume_rule": { "name": "Объём", "description": "Предлагать способ доставки, только если объём отправления в кубических метрах входит в заданный диапазон" },
+        "weight_rule": { "name": "Вес", "description": "Предлагать способ доставки, только если вес посылки входит в заданный диапазон" }
+      },
+      "order_routing_rule": {
+        "default_location": { "name": "Склад по умолчанию", "description": "Отдавать предпочтение складу, отмеченному по умолчанию" },
+        "minimize_splits": { "name": "Меньше отправлений", "description": "Отдавать предпочтение складу, который может собрать больше позиций целиком, чтобы не разделять заказ" },
+        "preferred_location": { "name": "Предпочтительный склад", "description": "Отправлять заказ со склада, указанного в заказе, если он задан" }
+      },
+      "price_rule": {
+        "channel_rule": { "name": "Канал продаж", "description": "Применять цены в зависимости от канала продаж" },
+        "customer_group_rule": { "name": "Группа покупателей", "description": "Применять цены к отдельным группам покупателей" },
+        "market_rule": { "name": "Рынок", "description": "Применять цены в зависимости от рынка" },
+        "user_rule": { "name": "Покупатель", "description": "Применять цены к отдельным покупателям" },
+        "volume_rule": { "name": "Оптовые цены", "description": "Применять цены в зависимости от количества товаров" },
+        "zone_rule": { "name": "Зона", "description": "Применять цены в зависимости от зоны доставки" }
+      },
+      "promotion_action": {
+        "create_adjustment": { "name": "Скидка на весь заказ", "description": "Начисляет скидку на весь заказ" },
+        "create_item_adjustments": { "name": "Скидка на позицию", "description": "Начисляет скидку на отдельную позицию заказа" },
+        "create_line_items": { "name": "Добавить товары в заказ", "description": "Бесплатно добавляет в корзину указанное количество варианта товара" },
+        "free_shipping": { "name": "Бесплатная доставка", "description": "Обнуляет стоимость всех отправлений в заказе" }
+      },
+      "promotion_rule": {
+        "category": { "name": "Категории", "description": "В заказе есть товары из указанных категорий" },
+        "channel": { "name": "Каналы продаж", "description": "Ограничить заказ выбранными каналами продаж" },
+        "country": { "name": "Страна", "description": "Ограничить заказы страной в адресе доставки" },
+        "currency": { "name": "Валюта", "description": "Ограничить заказы выбранной валютой" },
+        "customer": { "name": "Покупатели", "description": "Доступно только выбранным покупателям" },
+        "customer_group": { "name": "Группы покупателей", "description": "Доступно только покупателям из выбранных групп" },
+        "customer_logged_in": { "name": "Только для вошедших покупателей", "description": "Доступно только покупателям, вошедшим в аккаунт" },
+        "first_order": { "name": "Первый заказ", "description": "Заказ должен быть первым для этого покупателя" },
+        "item_total": { "name": "Стоимость товаров", "description": "Сумма товаров в заказе соответствует этим условиям" },
+        "market": { "name": "Рынки", "description": "Ограничить заказ выбранными рынками" },
+        "one_use_per_user": { "name": "Одно применение на покупателя", "description": "Каждый покупатель может применить предложение только один раз" },
+        "option_value": { "name": "Значения опций", "description": "В заказе есть товары с выбранными значениями опций" },
+        "product": { "name": "Товары", "description": "В заказе есть выбранные товары" }
+      },
+      "seller_requirement": {
+        "accept_terms": { "name": "Принять условия", "description": "Продавец должен принять условия маркетплейса перед началом продаж" },
+        "attestation": { "name": "Подтверждение продавца", "description": "Продавец должен подтвердить указанное вами заявление" },
+        "billing_address": { "name": "Платёжный адрес", "description": "Продавец должен указать платёжный адрес" },
+        "complete_profile": { "name": "Заполнить профиль", "description": "Продавец должен заполнить публичный профиль" },
+        "delivery_method": { "name": "Способ доставки", "description": "Продавец должен настроить хотя бы один способ доставки" },
+        "document": { "name": "Документ", "description": "Продавец должен загрузить документ на проверку" },
+        "minimum_products": { "name": "Минимум товаров", "description": "Продавец должен опубликовать заданное количество товаров" },
+        "operator_review": { "name": "Проверка оператором", "description": "Сотрудник должен вручную одобрить продавца" },
+        "payout_account": { "name": "Счёт для выплат", "description": "Продавец должен подключить счёт для получения выплат" },
+        "policy": { "name": "Правила продавца", "description": "Продавец должен опубликовать правила своего магазина" },
+        "required_custom_fields": { "name": "Обязательные дополнительные поля", "description": "Продавец должен заполнить отмеченные вами обязательные поля" },
+        "returns_address": { "name": "Адрес для возвратов", "description": "Продавец должен указать адрес для возврата товаров" }
+      }
+    },
+    "digital_assets": {
+      "add": "Добавить",
+      "all_variants": "Все варианты товара",
+      "columns": { "file": "Файл", "variant": "Вариант товара", "size": "Размер", "downloads": "Загрузки", "days": "Дни" },
+      "delete_description": "Файл «{{name}}» сразу станет недоступен для скачивания всем покупателям, которые его приобрели.",
+      "delete_title": "Удалить этот файл?",
+      "description": "Файлы, которые покупатели могут скачать после покупки. Прикрепите их к цифровому товару или добавьте инструкцию либо гарантию к физическому товару.",
+      "download": "Скачать",
+      "drop_hint": "Перетащите файлы сюда или нажмите, чтобы выбрать",
+      "empty": "Файлов пока нет",
+      "limit_invalid": "Укажите целое число не меньше 1 или оставьте поле пустым.",
+      "limits_help": "Оставьте лимиты загрузок и дней пустыми, чтобы использовать настройки магазина.",
+      "source": { "upload": "Загрузить файл" },
+      "store_default": "{{count}} (настройка магазина)",
+      "title": "Цифровые файлы",
+      "untitled": "Файл без названия",
+      "upload": "Добавить файл",
+      "upload_failed": "Не удалось загрузить {{name}}: {{message}}",
+      "uploading": "Загрузка {{name}}…",
+      "uploading_short": "Загрузка…",
+      "replace": "Заменить файл",
+      "replace_description": "Файл «{{name}}» будет удалён. Все покупатели, купившие его, смогут скачать новый файл по прежним ссылкам. Изменение вступит в силу сразу.",
+      "replace_title": "Заменить этот файл?"
+    },
+    "pages": {
+      "settings": {
+        "stock_locations": {
+          "add_sheet_title": "Добавить склад",
+          "edit_sheet_title": "Изменить склад",
+          "search_placeholder": "Поиск складов…"
+        },
+        "package_types": { "add_sheet_title": "Добавить тип упаковки" }
+      },
+      "products": {
+        "add_cta": "Добавить товар",
+        "bulk": {
+          "add_categories_action": "Добавить в категории…",
+          "add_channels_action": "Добавить в каналы продаж…",
+          "add_collections_action": "Добавить в подборки",
+          "add_tags_action": "Добавить теги…",
+          "categories_add_description": "Выберите категории, в которые нужно добавить эти товары.",
+          "categories_add_failed": "Не удалось добавить товары в категории",
+          "categories_add_title": "Добавить в категории",
+          "categories_added": "Товары добавлены в категории: {n}",
+          "categories_remove_description": "Выберите категории, из которых нужно убрать эти товары.",
+          "categories_remove_failed": "Не удалось убрать товары из категорий",
+          "categories_remove_title": "Убрать из категорий",
+          "categories_removed": "Товары убраны из категорий: {n}",
+          "channels_add_description": "Выберите каналы продаж, в которых нужно опубликовать эти товары.",
+          "channels_add_failed": "Не удалось опубликовать товары в каналах продаж",
+          "channels_add_title": "Добавить в каналы продаж",
+          "channels_added": "Товары опубликованы в каналах продаж: {n}",
+          "channels_remove_description": "Выберите каналы продаж, из которых нужно убрать эти товары.",
+          "channels_remove_failed": "Не удалось убрать товары из каналов продаж",
+          "channels_remove_title": "Убрать из каналов продаж",
+          "channels_removed": "Товары сняты с публикации в каналах продаж: {n}",
+          "collections_add_description": "Выбранные товары будут добавлены во все отмеченные подборки.",
+          "collections_add_failed": "Не удалось добавить товары в подборки",
+          "collections_add_title": "Добавить в подборки",
+          "collections_added": "Товары добавлены в подборки",
+          "collections_remove_description": "Выбранные товары будут убраны из всех отмеченных подборок.",
+          "collections_remove_failed": "Не удалось убрать товары из подборок",
+          "collections_remove_title": "Убрать из подборок",
+          "collections_removed": "Товары убраны из подборок",
+          "delete_confirm": { "message": "Выбранные товары будут удалены. Отменить это действие нельзя.", "title": "Удалить товары: {n}?" },
+          "delete_failed": "Не удалось удалить товары",
+          "deleted": "Удалено товаров: {n}",
+          "remove_categories_action": "Убрать из категорий…",
+          "remove_channels_action": "Убрать из каналов продаж…",
+          "remove_collections_action": "Убрать из подборок",
+          "remove_tags_action": "Удалить теги…",
+          "set_status_action": "Изменить статус…",
+          "status_sheet_description": "Выберите статус для отмеченных товаров.",
+          "status_sheet_title": "Изменить статус товара",
+          "status_update_failed": "Не удалось изменить статус товара",
+          "status_updated": "Статус изменён у товаров: {n}",
+          "tags_add_description": "Выберите или создайте теги для этих товаров.",
+          "tags_add_failed": "Не удалось добавить теги",
+          "tags_add_title": "Добавить теги",
+          "tags_added": "Теги добавлены товарам: {n}",
+          "tags_remove_description": "Выберите теги, которые нужно удалить у этих товаров.",
+          "tags_remove_failed": "Не удалось удалить теги",
+          "tags_remove_title": "Удалить теги",
+          "tags_removed": "Теги удалены у товаров: {n}"
+        },
+        "clone_failed": "Не удалось создать копию товара",
+        "clone_succeeded": "Копия товара создана",
+        "delete_failed": "Не удалось удалить товар",
+        "delete_succeeded": "Товар удалён",
+        "edit": { "bulk_prices": { "no_variants": "Добавьте хотя бы один вариант товара, чтобы изменить цены." } },
+        "inventory": {
+          "in_stock": "В наличии: {{count}}",
+          "in_stock_short": "В наличии",
+          "on_backorder": "Доступно под заказ",
+          "out_of_stock": "Нет в наличии"
+        },
+        "media_empty": "Медиафайлов пока нет.",
+        "media_upload": "Загрузить медиафайл",
+        "new": {
+          "create_failed": "Не удалось создать товар",
+          "create_succeeded": "Товар создан",
+          "description": "Настройте товар: добавьте варианты, цены, остатки, изображения и дополнительные поля.",
+          "preview_slug_placeholder": "slug-товара",
+          "save_label": "Создать товар",
+          "title": "Новый товар"
+        },
+        "options": {
+          "add_value": "Добавить значение опции",
+          "sheet_title_create": "Создать тип опции",
+          "sheet_title_edit": "Изменить тип опции",
+          "table": { "values": "Значения" },
+          "values_empty": "Значений пока нет.",
+          "values_section": "Значения"
+        },
+        "price_lists": {
+          "activate": "Активировать",
+          "activate_confirm": {
+            "message": "Прайс-лист «{{name}}» сразу начнёт применяться к подходящим покупателям и останется активным, пока вы его не отключите.",
+            "message_with_end": "Прайс-лист «{{name}}» сразу начнёт применяться к подходящим покупателям и останется активным до отключения или даты окончания ({{ends_at}}).",
+            "title": "Активировать прайс-лист?"
+          },
+          "add_cta": "Новый прайс-лист",
+          "add_products_cta": "Добавить товары",
+          "add_rule": "Добавить правило",
+          "add_rule_help": "Выберите тип правила для настройки.",
+          "basics_section": "Основное",
+          "deactivate": "Отключить",
+          "deactivate_confirm": { "message": "Прайс-лист «{{name}}» сразу перестанет применяться к покупателям. Уже оформленные заказы не изменятся.", "title": "Отключить прайс-лист?" },
+          "delete_confirm": { "message": "При удалении прайс-листа «{{name}}» его цены также будут удалены. Отменить это действие нельзя.", "title": "Удалить прайс-лист?" },
+          "edit_prices": {
+            "add_products_link": "Добавить товары",
+            "columns": { "compare_at_price": "Прежняя цена", "price": "Цена", "product": "Товар", "sku": "Артикул", "variant": "Вариант товара" },
+            "compare_at_aria": "Прежняя цена для {{label}}",
+            "count_summary_one": "{{count}} цена · {{currency}}",
+            "count_summary_few": "{{count}} цены · {{currency}}",
+            "count_summary_many": "{{count}} цен · {{currency}}",
+            "count_summary_other": "{{count}} цены · {{currency}}",
+            "currency_label": "Валюта",
+            "dirty_summary_one": "Не сохранено изменений: {{count}}",
+            "dirty_summary_few": "Не сохранено изменений: {{count}}",
+            "dirty_summary_many": "Не сохранено изменений: {{count}}",
+            "dirty_summary_other": "Не сохранено изменений: {{count}}",
+            "discard_confirm": {
+              "message_close_one": "Есть несохранённая цена: {{count}}. При закрытии она будет потеряна.",
+              "message_close_few": "Есть несохранённые цены: {{count}}. При закрытии они будут потеряны.",
+              "message_close_many": "Есть несохранённые цены: {{count}}. При закрытии они будут потеряны.",
+              "message_close_other": "Есть несохранённые цены: {{count}}. При закрытии они будут потеряны.",
+              "message_currency": "При смене валюты несохранённые цены будут потеряны.",
+              "title": "Отменить несохранённые изменения цен?"
+            },
+            "empty": "В этом прайс-листе пока нет товаров.",
+            "empty_no_base_prices": "Базовые цены не заданы.",
+            "empty_pick_products": "Выберите товары в прайс-листе, чтобы задать для них цены.",
+            "grid_aria": "Цены вариантов товара",
+            "no_matches_for_filters": "Цены по выбранным фильтрам не найдены.",
+            "no_matches_for_search": "Цены по запросу «{{search}}» не найдены.",
+            "price_aria": "Цена для {{label}}",
+            "save_cta": "Сохранить цены",
+            "save_failed": "Не удалось сохранить цены",
+            "save_success_one": "Сохранена цена: {{count}}",
+            "save_success_few": "Сохранены цены: {{count}}",
+            "save_success_many": "Сохранены цены: {{count}}",
+            "save_success_other": "Сохранены цены: {{count}}",
+            "search_placeholder": "Поиск по товару, артикулу или опции…",
+            "title": "Изменить цены — {{name}}",
+            "variant_default": "По умолчанию"
+          },
+          "edit_prices_cta": "Изменить цены",
+          "no_changes": "Нет изменений для сохранения.",
+          "prices_help_one": "Задана цена для {{count}} товара. Откройте массовое редактирование, чтобы изменить её.",
+          "prices_help_few": "Заданы цены для {{count}} товаров. Откройте массовое редактирование, чтобы изменить их.",
+          "prices_help_many": "Заданы цены для {{count}} товаров. Откройте массовое редактирование, чтобы изменить их.",
+          "prices_help_other": "Заданы цены для {{count}} товара. Откройте массовое редактирование, чтобы изменить их.",
+          "prices_help_zero": "Выберите товары выше, чтобы создать поля для цен, затем откройте массовое редактирование.",
+          "products_empty": "Товаров пока нет. Добавьте товар, чтобы начать редактировать цены.",
+          "products_empty_search": "Товары не найдены",
+          "products_help": "Выберите товары для этого прайс-листа. При сохранении появятся поля для цен — заполните их ниже.",
+          "products_search_placeholder": "Поиск товаров по названию…",
+          "products_section": "Товары",
+          "products_selected_one": "Выбран товар: {{count}}.",
+          "products_selected_few": "Выбрано товара: {{count}}.",
+          "products_selected_many": "Выбрано товаров: {{count}}.",
+          "products_selected_other": "Выбрано товара: {{count}}.",
+          "remove_rule_confirm": { "message": "Правило будет удалено при сохранении прайс-листа.", "title": "Удалить правило?" },
+          "remove_selected": "Удалить выбранное",
+          "rule_click_to_configure": "Нажмите, чтобы настроить",
+          "rule_default_description": "Настройте параметры правила.",
+          "rule_name_overflow": "{{names}} и ещё {{count}}",
+          "rule_no_options": "У этого правила нет дополнительных параметров — достаточно добавить его, чтобы применить ограничение.",
+          "rule_types_all_used": "Все доступные типы правил уже добавлены в этот прайс-лист.",
+          "rule_types_empty": "Типы правил не зарегистрированы.",
+          "rules_empty": "Правил нет — прайс-лист применяется ко всем покупателям.",
+          "rules_help": "Условия применения прайс-листа. Выберите «все», чтобы требовать выполнения каждого правила, или «любое», чтобы применить первое совпавшее.",
+          "rules_section": "Правила",
+          "schedule": "Расписание",
+          "schedule_confirm": { "message": "Прайс-лист «{{name}}» начнёт действовать {{starts_at}} и останется активным до даты окончания.", "title": "Запланировать прайс-лист?" },
+          "schedule_section": "Расписание",
+          "sheet_title_create": "Создать прайс-лист",
+          "sheet_title_edit": "Изменить прайс-лист",
+          "subtitle": "Цены для отдельных групп покупателей, регионов или объёмов заказа.",
+          "title": "Прайс-листы",
+          "unschedule": "Отменить расписание",
+          "unschedule_confirm": { "message": "Прайс-лист «{{name}}» не активируется в запланированную дату. Позже его можно запланировать снова или включить вручную.", "title": "Отменить расписание прайс-листа?" }
+        },
+        "publishing": {
+          "caption_hidden_after": "Снимется с публикации {{date}}",
+          "caption_live": "Сейчас виден покупателям",
+          "caption_not_available": "Скрыт — статус товара: {{product_status}}",
+          "caption_scheduled": "Будет опубликован {{date}}",
+          "caption_unpublished": "Снят с публикации {{date}}",
+          "caption_window": "Опубликован с {{start}} по {{end}}",
+          "empty": "Товар пока не опубликован ни в одном канале продаж.",
+          "inactive_marker": "Неактивен",
+          "manage_cta": "Управлять",
+          "manage_description": "Выберите каналы продаж, где будет опубликован товар. Отключите канал, чтобы снять товар с публикации.",
+          "manage_title": "Управление каналами продаж",
+          "no_channels": "Каналов продаж нет. Создайте канал в разделе «Настройки → Каналы продаж».",
+          "status_hidden": "Скрыт",
+          "status_live": "Опубликован",
+          "status_not_available": "Недоступен",
+          "status_scheduled": "Запланирован",
+          "title": "Публикация"
+        },
+        "section_basics": "Основное",
+        "section_categorization": "Категории",
+        "section_inventory": "Остатки",
+        "section_media": "Медиафайлы",
+        "section_organization": "Организация",
+        "section_pricing": "Цены",
+        "section_seo": "Поисковая оптимизация",
+        "section_variants": "Варианты товара",
+        "status_options": { "active": "Активен", "archived": "В архиве", "draft": "Черновик", "proposed": "На проверке", "rejected": "Требуются изменения" },
+        "status_under_review": "Товар проходит проверку. Выберите «Одобрить» или «Отклонить».",
+        "transfers": {
+          "description_external": "Приёмка извне на склад <strong>{{destination}}</strong>.",
+          "description_internal": "Товары перемещены со склада <strong>{{source}}</strong> на склад <strong>{{destination}}</strong>.",
+          "edit_sheet_title": "Перемещение {{number}}",
+          "items_empty": "Товаров пока нет.",
+          "section_from": "Откуда",
+          "section_items": "Товары",
+          "section_to": "Куда",
+          "sheet_title": "Новое перемещение товаров"
+        },
+        "variants_empty": "Вариантов товара пока нет.",
+        "variants_one": "{{count}} вариант товара",
+        "variants_few": "{{count}} варианта товара",
+        "variants_many": "{{count}} вариантов товара",
+        "variants_other": "{{count}} варианта товара"
+      }
+    },
+    "products": {
+      "autocomplete": { "empty": "Товары не найдены", "placeholder": "Поиск товаров по названию…" },
+      "category_search_placeholder": "Поиск категорий…",
+      "collection_search_placeholder": "Поиск подборок…",
+      "columns": { "in_stock": "В наличии", "price": "Цена", "sku": "Артикул" },
+      "delete_confirm": "Вы уверены, что хотите удалить этот товар?",
+      "delete_label": "Удалить товар",
+      "inventory": {
+        "backorder_aria": "Разрешить заказы при отсутствии товара на складе {{location}}",
+        "columns": { "backorder": "Под заказ", "location": "Склад", "on_hand": "В наличии" },
+        "empty_no_locations": "Добавьте склад в разделе «Настройки», чтобы учитывать остатки.",
+        "empty_no_variants": "Остатки учитываются отдельно по каждому складу. Добавьте вариант товара, чтобы начать учёт.",
+        "on_hand_aria": "В наличии на складе {{location}}",
+        "unknown_location": "Неизвестный склад"
+      },
+      "media": {
+        "add_from_library": "Добавить из медиатеки",
+        "add_video": "Добавить ссылку на видео",
+        "add_video_submit": "Добавить видео",
+        "add_video_title": "Добавить ссылку на видео",
+        "assigned_variants_help": "Выберите варианты товара, к которым относится изображение. Оставьте поле пустым, чтобы применить его ко всем вариантам.",
+        "assigned_variants_label": "Связанные варианты товара",
+        "delete_confirm": "Удалить этот медиафайл? Отменить это действие нельзя.",
+        "drop_hint": "Перетащите файлы сюда или нажмите, чтобы выбрать",
+        "edit_title": "Изменить медиафайл",
+        "file_types_hint": "Изображения (PNG, JPG, WebP) и видео (MP4, WebM, MOV)",
+        "focal_point_help": "Нажмите на изображение, чтобы выбрать видимую область при обрезке.",
+        "focal_point_reset": "Сбросить",
+        "unsupported_file_one": "Файл не добавлен: {{count}}. Поддерживаются только изображения и видео.",
+        "unsupported_file_few": "Файлы не добавлены: {{count}}. Поддерживаются только изображения и видео.",
+        "unsupported_file_many": "Файлы не добавлены: {{count}}. Поддерживаются только изображения и видео.",
+        "unsupported_file_other": "Файлы не добавлены: {{count}}. Поддерживаются только изображения и видео.",
+        "upload_failed": "Не удалось загрузить {{name}}: {{message}}",
+        "upload_status_failed": "Ошибка",
+        "video_preview_title": "Предпросмотр видео",
+        "video_url_invalid": "Введите ссылку на YouTube или Vimeo."
+      },
+      "no_categories_found": "Категории не найдены",
+      "no_collections_found": "Подборки не найдены",
+      "options": {
+        "add_cta": "Добавить тип опции",
+        "count_one": "{{count}} значение",
+        "count_few": "{{count}} значения",
+        "count_many": "{{count}} значений",
+        "count_other": "{{count}} значения",
+        "create_description": "Создайте опцию, например размер или цвет, доступную для вариантов товара.",
+        "create_label": "Создать тип опции",
+        "delete_confirm": {
+          "message": "Все значения этого типа опции будут удалены. Варианты товаров, использующие эти значения, потеряют их.",
+          "title": "Удалить тип опции?"
+        },
+        "edit_description": "Измените тип опции и его значения.",
+        "image_upload_failed": "Не удалось загрузить изображение",
+        "kinds": { "buttons": "Кнопки", "color_swatch": "Образец цвета", "dropdown": "Выпадающий список" },
+        "value_label_placeholder": "например, Маленький",
+        "value_name_placeholder": "например, small",
+        "values_help": "Перетащите значения, чтобы изменить порядок. Первое значение используется по умолчанию для новых вариантов товара."
+      },
+      "price_lists": {
+        "errors": { "failed_to_activate": "Не удалось активировать прайс-лист", "failed_to_deactivate": "Не удалось отключить прайс-лист" },
+        "messages": {
+          "activated": "Прайс-лист активирован",
+          "created": "Прайс-лист создан",
+          "deactivated": "Прайс-лист отключён",
+          "deleted": "Прайс-лист удалён",
+          "updated": "Прайс-лист обновлён"
+        },
+        "validation": { "ends_after_starts": "Дата окончания должна быть позже даты начала." }
+      },
+      "product_type_adds_options_one": "Этот тип товара добавляет новые опции: {{options}}.",
+      "product_type_adds_options_few": "Этот тип товара добавляет новые опции: {{options}}.",
+      "product_type_adds_options_many": "Этот тип товара добавляет новые опции: {{options}}.",
+      "product_type_adds_options_other": "Этот тип товара добавляет новые опции: {{options}}.",
+      "product_type_placeholder": "Тип товара не выбран",
+      "save_label": "Сохранить товар",
+      "seo": { "meta_description_placeholder": "Описание для поисковых систем", "meta_title_placeholder": "Заголовок для поисковых систем", "slug_placeholder": "адрес-товара" },
+      "tax_category_placeholder": "Выбрать налоговую категорию",
+      "tax": {
+        "apply_to_variants_help": "Категория применяется ко всем вариантам без отдельной налоговой категории. После сохранения для них будет использована эта настройка.",
+        "variant_overrides_heading": "Варианты со своей налоговой категорией",
+        "variant_overrides_description": "У этих вариантов останется своя категория, пока вы не сбросите переопределение. Для остальных применяется категория товара.",
+        "clear_variant_override": "Использовать категорию товара"
+      },
+      "transfers": {
+        "create_description": "Переместите остатки между складами или примите новые товары от поставщика.",
+        "delete_confirm": { "message": "Операции с остатками, созданные этим перемещением, будут отменены.", "title": "Удалить это перемещение?" },
+        "destination_placeholder": "Выберите склад назначения",
+        "details_card": "Основное",
+        "different_locations_error": "Склады отправления и назначения должны различаться.",
+        "external_label": "Внешняя приёмка от поставщика",
+        "fields": { "created": "Создано", "external_receive": "Внешняя приёмка", "immutable_note": "Созданное перемещение остатков нельзя изменить.", "internal": "Внутреннее", "reference": "Номер документа", "type": "Тип" },
+        "items_table": { "qty": "Количество", "sku": "Артикул", "variant": "Вариант товара" },
+        "new_cta": "Новое перемещение",
+        "reference_label": "Номер документа",
+        "reference_placeholder": "Номер заказа поставщику, накладной…",
+        "review_description": "Проверьте перемещение перед созданием. После этого изменить товары будет нельзя.",
+        "search_items_placeholder": "Поиск по названию или артикулу (от 3 символов)…"
+      },
+      "variants": {
+        "add_option": "Добавить опцию",
+        "bulk_edit": { "grid_aria": "Таблица массового редактирования вариантов", "title": "Массовое редактирование вариантов", "trigger": "Массовое редактирование", "unset": "Не задано" },
+        "create_option_type": "Создать тип опции",
+        "create_option_type_title": "Новый тип опции",
+        "create_value": "Новое значение",
+        "create_value_title": "Новое значение опции",
+        "default_variant": "Вариант по умолчанию",
+        "edit_row_aria": "Изменить {{name}}",
+        "edit_variant": "Изменить вариант товара — {{name}}",
+        "errors": { "failed_to_create_option_type": "Не удалось создать тип опции", "failed_to_create_value": "Не удалось создать значение" },
+        "keep": "Оставить все",
+        "option_type_label": "Тип опции",
+        "option_type_placeholder": "Выберите тип опции",
+        "orphan_warning": "При сохранении будут удалены существующие варианты: {{count}}",
+        "orphan_warning_one": "При сохранении будет удалён {{count}} существующий вариант, не соответствующий выбранным опциям:",
+        "orphan_warning_few": "При сохранении будут удалены {{count}} существующих варианта, не соответствующих выбранным опциям:",
+        "orphan_warning_many": "При сохранении будут удалены {{count}} существующих вариантов, не соответствующих выбранным опциям:",
+        "orphan_warning_other": "При сохранении будут удалены {{count}} существующего варианта, не соответствующего выбранным опциям:",
+        "remove_row_aria": "Удалить {{name}}",
+        "sheet": {
+          "availability": "Доступность",
+          "customs": "Таможенные сведения",
+          "customs_help": "Используется в таможенных документах при пересечении товаром границы.",
+          "identity": "Идентификация",
+          "tax_category_placeholder": "Использовать категорию товара",
+          "ordering": "Оптовый заказ",
+          "ordering_help": "Минимальное количество товара. Проверяется при добавлении в корзину и оформлении заказа. Для покупателей можно задать отдельные условия через группу покупателей или каталог компании. Остатки при этом учитываются в единицах товара.",
+          "packing": "Упаковка",
+          "packing_help": "Параметры отгрузки товара оптом. По ним рассчитывается стоимость перевозки.",
+          "no_carton_types": "Добавьте тип упаковки в разделе <settingsLink>Настройки → Типы упаковки</settingsLink>, чтобы указать, как упакован товар.",
+          "carton_placeholder": "Без упаковки",
+          "pending_save": "Изменения будут сохранены вместе с товаром."
+        },
+        "title": "Варианты товара",
+        "variant_label": "Вариант товара"
+      }
+    },
+    "resource_picker": {
+      "add_count_one": "Добавить: {{count}}",
+      "add_count_few": "Добавить: {{count}}",
+      "add_count_many": "Добавить: {{count}}",
+      "add_count_other": "Добавить: {{count}}",
+      "already_added": "Добавлено",
+      "empty": "Ничего не найдено.",
+      "load_more": "Загрузить ещё",
+      "search_placeholder": "Поиск…",
+      "select_all_matching_one": "Выбрать все совпадения: {{count}}",
+      "select_all_matching_few": "Выбрать все совпадения: {{count}}",
+      "select_all_matching_many": "Выбрать все совпадения: {{count}}",
+      "select_all_matching_other": "Выбрать все совпадения: {{count}}",
+      "select_page_one": "Выбрать на этой странице: {{count}}",
+      "select_page_few": "Выбрать на этой странице: {{count}}",
+      "select_page_many": "Выбрать на этой странице: {{count}}",
+      "select_page_other": "Выбрать на этой странице: {{count}}",
+      "selected_count_one": "Выбрано: {{count}}",
+      "selected_count_few": "Выбрано: {{count}}",
+      "selected_count_many": "Выбрано: {{count}}",
+      "selected_count_other": "Выбрано: {{count}}",
+      "title": "Добавить товары"
+    },
+    "row_actions": {
+      "clone": "Создать копию",
+      "delete": "Удалить",
+      "edit": "Изменить",
+      "menu_label": "Открыть действия"
+    },
+    "settings_nav": {
+      "groups": { "fulfillment": "Доставка и отгрузка", "team": "Команда и доступ" },
+      "items": { "stock_locations": "Склады" }
+    },
+    "settings_page": {
+      "back_to_dashboard": "Вернуться к панели управления",
+      "description": "Управление магазином, продажами и командой.",
+      "no_results": "Настройки по запросу «{{query}}» не найдены.",
+      "search_placeholder": "Поиск настроек",
+      "title": "Настройки"
+    },
+    "stock_locations": {
+      "add_cta": "Добавить склад",
+      "badges": { "default": "По умолчанию", "enabled": "Включён", "inactive": "Неактивен" },
+      "columns": {
+        "default": "По умолчанию", "location": "Склад", "pickup": "Самовывоз", "returns": "Возвраты", "seller": "Продавец", "type": "Тип"
+      },
+      "create_description": "Добавьте склад, магазин или пункт самовывоза, с которого будут собираться и отправляться заказы.",
+      "create_label": "Создать склад",
+      "delete_confirm": {
+        "message": "Склад «{{name}}» будет удалён вместе со всеми остатками.",
+        "title": "Удалить склад?"
+      },
+      "edit_description": "Измените название, адрес, самовывоз или правила хранения товаров.",
+      "empty": "Складов пока нет",
+      "kinds": { "fulfillment_center": "Центр комплектации", "store": "Магазин", "warehouse": "Склад" },
+      "pickup_stock_policies": {
+        "any": "Разрешить перемещение со складов",
+        "local": "Только товары на этом складе"
+      },
+      "search_placeholder": "Поиск по названию…",
+      "section_behavior": "Работа склада",
+      "section_details": "Основное",
+      "section_pickup": "Самовывоз",
+      "section_returns": "Возвраты",
+      "stock_levels": {
+        "empty": "На этом складе пока нет остатков.",
+        "empty_search": "Остатки по запросу не найдены.",
+        "help": "Изменяйте фактические остатки и возможность заказа товара при его отсутствии на складе.",
+        "low_stock_marker": "мало на складе",
+        "search_placeholder": "Поиск по артикулу или товару…",
+        "table": { "backorder": "Под заказ", "on_hand": "В наличии", "variant": "Вариант товара" },
+        "title": "Остатки на складе",
+        "unknown_product": "Неизвестный товар",
+        "variant_count_one": "{{count}} вариант",
+        "variant_count_few": "{{count}} варианта",
+        "variant_count_many": "{{count}} вариантов",
+        "variant_count_other": "{{count}} варианта"
+      },
+      "description": "Склады и магазины, где хранятся товары и откуда отправляются заказы."
+    },
+    "validation": {
+      "codes": {
+        "accepted": "необходимо принять",
+        "blank": "не может быть пустым",
+        "confirmation": "не совпадает",
+        "empty": "не может быть пустым",
+        "equal_to": "должно быть равно {{count}}",
+        "exclusion": "зарезервировано",
+        "forbidden_reporting_member": "Отчёт содержит данные, к которым у вас нет доступа.",
+        "greater_than": "должно быть больше {{count}}",
+        "greater_than_or_equal_to": "должно быть не меньше {{count}}",
+        "inclusion": "не входит в список допустимых значений",
+        "invalid": "имеет неверный формат",
+        "invalid_commission_rule_type": "{{type}} не является типом правила комиссии для этого магазина",
+        "less_than": "должно быть меньше {{count}}",
+        "less_than_or_equal_to": "должно быть не больше {{count}}",
+        "not_a_number": "должно быть числом",
+        "not_an_integer": "должно быть целым числом",
+        "other_than": "не должно быть равно {{count}}",
+        "present": "должно быть пустым",
+        "product_not_in_store": "все товары должны принадлежать этому магазину",
+        "required": "обязательно",
+        "seeded_report_read_only": "Это встроенный отчёт, его нельзя изменить. Сохраните копию.",
+        "taken": "уже используется",
+        "too_long": "слишком длинное (максимум {{count}} символов)",
+        "too_many_decimals": "содержит больше {{count}} знаков после запятой",
+        "too_short": "слишком короткое (минимум {{count}} символов)",
+        "wrong_length": "имеет неверную длину (должно быть {{count}} символов)"
+      },
+      "country_required": "Укажите страну",
+      "currency_required": "Укажите валюту",
+      "locale_required": "Укажите язык",
+      "first_name_required": "Укажите имя",
+      "invalid_email": "Введите корректный адрес электронной почты",
+      "invalid_email_or_password": "Неверный адрес электронной почты или пароль",
+      "invalid_hex_color": "Укажите корректный цвет в шестнадцатеричном формате",
+      "invalid_password": "Неверный пароль",
+      "last_name_required": "Укажите фамилию",
+      "min_length": "Значение «{{field}}» должно содержать не менее {{count}} символов",
+      "password_required": "Укажите пароль",
+      "passwords_dont_match": "Пароли не совпадают",
+      "positive_number": "Значение «{{field}}» должно быть больше 0",
+      "required": "Заполните поле «{{field}}»",
+      "store_name_required": "Укажите название магазина",
+      "too_many_decimals": "В поле «{{field}}» допускается не более {{count}} знаков после запятой"
+    }
+  }
+}

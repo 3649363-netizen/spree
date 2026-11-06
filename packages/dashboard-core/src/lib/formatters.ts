@@ -1,6 +1,7 @@
 import type { Price } from '@spree/admin-sdk'
 import { formatMoney } from '@spree/core'
 import { parseISO } from 'date-fns'
+import { ru } from 'date-fns/locale'
 import { formatInTimeZone } from 'date-fns-tz'
 import i18n from 'i18next'
 
@@ -34,11 +35,16 @@ export function formatAmount(
 }
 
 export function formatStoreDateTime(iso: string, timezone: string) {
-  return formatInTimeZone(parseISO(iso), timezone, 'PPP p')
+  const isRussian = i18n.language.startsWith('ru')
+  return formatInTimeZone(parseISO(iso), timezone, isRussian ? "PPP 'в' p" : 'PPP p', {
+    locale: isRussian ? ru : undefined,
+  })
 }
 
 export function formatStoreDate(iso: string, timezone: string) {
-  return formatInTimeZone(parseISO(iso), timezone, 'PP')
+  return formatInTimeZone(parseISO(iso), timezone, 'PP', {
+    locale: i18n.language.startsWith('ru') ? ru : undefined,
+  })
 }
 
 export function getInitials(fullName: string | null | undefined, fallback: string): string {

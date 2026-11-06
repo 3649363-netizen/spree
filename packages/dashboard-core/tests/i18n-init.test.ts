@@ -57,6 +57,7 @@ describe('i18n initialization ordering', () => {
     const { i18n, coreLocaleCodes } = await import('../src/lib/i18n')
 
     expect(coreLocaleCodes()).toContain('pl')
+    expect(coreLocaleCodes()).toContain('ru')
     // The guard inside reconcileStoreDefaultLocale is `target !== current`,
     // where current is this value. It must equal the stored language or the
     // page reloads on every boot, forever.
@@ -83,9 +84,10 @@ describe('sessionLocale', () => {
   }
 
   it('adopts the saved language when the panel ships it', async () => {
-    const { sessionLocale } = await load(['en', 'de'])
+    const { sessionLocale } = await load(['en', 'de', 'ru'])
 
     expect(sessionLocale('de', 'en')).toBe('de')
+    expect(sessionLocale('ru', 'en')).toBe('ru')
   })
 
   it('stays put when the page is already in the saved language', async () => {

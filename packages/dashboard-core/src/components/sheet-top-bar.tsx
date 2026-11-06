@@ -1,4 +1,5 @@
 import { SidebarTrigger, useSidebar } from '@spree/dashboard-ui'
+import { useTranslation } from 'react-i18next'
 import { TopBarBreadcrumbs } from './top-bar-breadcrumbs'
 
 /**
@@ -28,6 +29,7 @@ export function SheetTopBar({
    */
   inSettings?: boolean
 }) {
+  const { t } = useTranslation()
   const { isMobile, state } = useSidebar()
   const collapsed = state === 'collapsed' && !isMobile
 
@@ -36,7 +38,10 @@ export function SheetTopBar({
   return (
     <div className="hidden min-h-8 items-center gap-2 px-4 pt-3 md:flex">
       {!inSettings && (
-        <SidebarTrigger className="-ms-1 shrink-0 text-muted-foreground hover:bg-accent hover:text-foreground" />
+        <SidebarTrigger
+          aria-label={t('admin.a11y.toggle_sidebar')}
+          className="-ms-1 shrink-0 text-muted-foreground hover:bg-accent hover:text-foreground"
+        />
       )}
       <TopBarBreadcrumbs tenantId={tenantId} />
     </div>

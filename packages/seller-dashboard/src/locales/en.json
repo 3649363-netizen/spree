@@ -331,6 +331,16 @@
     "setup_description": "{{done}} of {{total}} done — complete these to start selling.",
     "setup_title": "Finish setting up",
     "status": "Status",
+    "statuses": {
+      "pending": "Pending invitation",
+      "invited": "Invitation sent",
+      "canceled": "Invitation canceled",
+      "onboarding": "Onboarding",
+      "ready_for_review": "Ready for review",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "suspended": "Suspended"
+    },
     "subtitle": "How you stand with this marketplace.",
     "team": "Team members",
     "title": "Hello, {{name}}"

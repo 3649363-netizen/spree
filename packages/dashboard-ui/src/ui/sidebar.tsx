@@ -294,7 +294,12 @@ function Sidebar({
   )
 }
 
-function SidebarTrigger({ className, onClick, ...props }: React.ComponentProps<typeof Button>) {
+function SidebarTrigger({
+  className,
+  onClick,
+  'aria-label': ariaLabel,
+  ...props
+}: React.ComponentProps<typeof Button> & { 'aria-label': string }) {
   const { toggleSidebar } = useSidebar()
 
   return (
@@ -308,10 +313,11 @@ function SidebarTrigger({ className, onClick, ...props }: React.ComponentProps<t
         onClick?.(event)
         toggleSidebar()
       }}
+      aria-label={ariaLabel}
       {...props}
     >
       <PanelLeftIcon />
-      <span className="sr-only">Toggle Sidebar</span>
+      <span className="sr-only">{ariaLabel}</span>
     </Button>
   )
 }

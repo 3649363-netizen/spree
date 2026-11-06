@@ -1,9 +1,17 @@
----
 ru:
   activemodel:
     errors:
       messages:
         blank: не может быть пустым
+      models:
+        spree/fulfillment_changer:
+          attributes:
+            current_shipment:
+              can_not_have_backordered_inventory_units: содержит отложенные к резервированию единицы товара
+              has_already_been_shipped: уже отправлена
+            desired_shipment:
+              can_not_transfer_within_same_shipment: не может совпадать с текущей отправкой
+              has_not_enough_stock_at_desired_location: на выбранном складе недостаточно товара
   activerecord:
     attributes:
       spree/address:
@@ -15,6 +23,9 @@ ru:
         label: Название адреса
         phone: Телефон
         state: Область/Регион
+        first_name: Имя
+        last_name: Фамилия
+        postal_code: Почтовый индекс
       spree/country:
         iso: ISO
         iso3: ISO3
@@ -27,6 +38,8 @@ ru:
         number: Номер
         verification_value: Значение проверки
         year: Год
+        base: ""
+        name: Имя на карте
       spree/customer_group:
         description: Описание
         name: Название
@@ -51,9 +64,11 @@ ru:
         filterable: Фильтруемый
         kind: Тип
         name: Название
+        label: Подпись
       spree/option_value:
         color_code: Код цвета
         image: Изображение образца
+        label: Подпись
       spree/order:
         checkout_complete: Оформление заказа завершено
         completed_at: Завершено
@@ -67,7 +82,7 @@ ru:
         item_total: Итого по товарам
         number: Номер
         payment_state: Состояние оплаты
-        shipment_state: Состояние доставки
+        shipment_state: Статус отправления
         special_instructions: Специальные инструкции
         state: Состояние
         total: Итого по заказу
@@ -76,11 +91,17 @@ ru:
         city: Город
         phone: Телефон
         state: Область/Регион
+        first_name: Имя для платёжного адреса
+        last_name: Фамилия для платёжного адреса
+        postal_code: Почтовый индекс платёжного адреса
       spree/order/ship_address:
         address1: Улица
         city: Город
         phone: Телефон
         state: Область/Регион
+        first_name: Имя для адреса доставки
+        last_name: Фамилия для адреса доставки
+        postal_code: Почтовый индекс адреса доставки
       spree/payment:
         amount: Количество
         number: Номер
@@ -149,7 +170,7 @@ ru:
         preferred_digital_asset_authorized_days: Лимит скачиваний (дней)
         preferred_limit_digital_download_count: Ограничить количество скачиваний цифровых ссылок
         preferred_limit_digital_download_days: Ограничить срок скачивания цифровых ссылок (дней)
-        seo_robots: SEO Robots
+        seo_robots: Правила для поисковых роботов
         seo_title: SEO-заголовок
         storefront_custom_code_body_end: Пользовательский код перед закрывающим тегом body
         storefront_custom_code_body_start: Пользовательский код после открывающего тега body
@@ -173,7 +194,7 @@ ru:
         name: Название
       spree/user:
         avatar: Аватар
-        email: Email
+        email: Электронная почта
         password: Пароль
         password_confirmation: Подтверждение пароля
       spree/variant:
@@ -185,6 +206,10 @@ ru:
         sku: Артикул
         weight: Вес
         width: Ширина
+        minimum_order_quantity: Минимальное количество для заказа
+        order_multiple: Кратность заказа
+        purchase_unit: Единица продажи
+        units_per_carton: Единиц в коробе
       spree/zone:
         description: Описание
         name: Название
@@ -192,18 +217,51 @@ ru:
         current_sign_in: Текущий вход в
         last_sign_in: Последний вход в
         sign_in_count: Количество входов
+      spree/calculator/tiered_flat_rate:
+        preferred_base_amount: Базовая сумма
+        preferred_currency: Валюта
+        preferred_tiers: Пороговые значения
+      spree/calculator/tiered_percent:
+        preferred_base_percent: Базовый процент
+        preferred_tiers: Пороговые значения
+      spree/catalog_order_minimum:
+        amount: Сумма
+        currency: Валюта
+      spree/catalog_quantity_rule:
+        minimum_order_quantity: Минимальное количество для заказа
+        order_multiple: Кратность заказа
+        variant: Вариант товара
+      spree/custom_field_definition:
+        namespace: Пространство имён
+        searchable: Участвует в поиске
+        sortable: Доступна сортировка
+      spree/product_type:
+        name: Название
+      spree/tax_identifier:
+        kind: Тип регистрации
+        value: Номер
+      spree/wishlist_item:
+        variant: ""
     errors:
       messages:
         blank: не может быть пустым
+        already_linked: уже связан с этим товаром
+        must_apply_to_products: должно быть дополнительным полем для товаров
+        must_belong_to_same_store: должно относиться к одному магазину
+        not_registered: не является зарегистрированным провайдером
+        spree_content_type_not_allowed: тип файла не поддерживается
+        too_many_decimals: содержит больше %{count} знаков после запятой
       models:
         spree/allowed_origin:
           attributes:
             origin:
-              must_be_origin_only: должен быть источником (схема и хост) без пути, запроса или фрагмента
+              must_be_origin_only: должен быть источником (схема и хост) без пути, запроса или
+                фрагмента
         spree/credit_card:
           attributes:
             base:
               card_expired: Срок действия карты истек
+              expiry_invalid: Срок действия карты указан неверно
         spree/gift_card:
           attributes:
             base:
@@ -223,7 +281,8 @@ ru:
           attributes:
             country:
               already_in_market: уже назначена другому рынку в этом магазине
-              not_in_shipping_zone: не охвачена ни одной зоной доставки. Сначала настройте зону доставки.
+              not_in_shipping_zone: не охвачена ни одной зоной доставки. Сначала настройте
+                зону доставки.
         spree/payment:
           attributes:
             amount:
@@ -232,10 +291,33 @@ ru:
           attributes:
             ends_at:
               must_be_after_starts_at: должна быть позже даты начала
+            base:
+              duplicate_quantity: для каждого порога количества нужно указать уникальное значение
+              invalid_quantity: каждый порог должен начинаться с целого числа единиц товара
+              malformed_price: цена должна быть числом, например 16,50
+              negative_price: цена не может быть меньше нуля
+              nothing_to_apply_to: не содержит правил, каталога или товаров, поэтому не будет
+                применяться ни к чему. Добавьте хотя бы одно условие перед
+                активацией.
+              price_rises_with_quantity: цена при большем количестве не может быть выше цены
+                для меньшего количества
+              quantity_on_base_price: базовая цена магазина применяется при любом количестве,
+                поэтому порог не может начинаться с единицы. Удалите порог или
+                задайте его в прайс-листе.
+            price_adjustment_percentage:
+              requires_catalog: можно задать только в прайс-листе, принадлежащем каталогу
+            price_adjustment_tiers:
+              requires_catalog: можно задать только в прайс-листе, принадлежащем каталогу
         spree/product:
           attributes:
             base:
-              cannot_destroy_if_attached_to_line_items: Невозможно удалить товары, добавленные в размещённые заказы. В таких случаях снимите их с продажи.
+              cannot_destroy_if_attached_to_line_items: Невозможно удалить товары, добавленные
+                в размещённые заказы. В таких случаях снимите их с продажи.
+              cannot_propose: На проверку можно отправить только черновик или товар, для
+                которого запрошены изменения.
+              not_awaiting_review: Этот товар не ожидает проверки.
+              status_decided_by_review: Статус товара на проверке меняется после одобрения или
+                возврата на доработку, а не при обычном редактировании.
             discontinue_on:
               invalid_date_range: должна быть позже даты появления в продаже
         spree/product_publication:
@@ -268,170 +350,426 @@ ru:
         spree/variant:
           attributes:
             base:
-              cannot_destroy_if_attached_to_line_items: Невозможно удалить варианты, добавленные в размещённые заказы. В таких случаях снимите их с продажи.
+              cannot_destroy_if_attached_to_line_items: Невозможно удалить варианты,
+                добавленные в размещённые заказы. В таких случаях снимите их с
+                продажи.
+            carton_package_type:
+              must_be_a_carton: тип упаковки должен быть коробом
+            order_multiple:
+              incompatible_with_carton: должна быть делителем или кратным числа единиц в
+                коробе (%{units_per_carton})
+            units_per_carton:
+              required_for_carton_purchase_unit: необходимо указать для единицы продажи «короб»
         spree/webhook_endpoint:
           attributes:
             url:
               internal_address_not_allowed: не должен указывать на внутренний или частный сетевой адрес
+              invalid_url: должен быть действительным URL с протоколом HTTP или HTTPS
+            subscriptions:
+              invalid_pattern: "должны быть названиями событий или шаблонами, например order.*
+                или *.created (отклонены: %{entries})"
+              too_many: можно указать не более %{count} событий
+        spree/calculator/tiered_flat_rate:
+          attributes:
+            preferred_tiers:
+              should_be_list: должно быть списком порогов, каждый из которых содержит
+                минимальное количество и значение
+              thresholds_should_be_positive_number: для каждого порога должно быть задано значение больше 0
+              thresholds_should_be_unique: значения порогов не должны повторяться
+              values_should_be_number: каждое значение должно быть не меньше 0
+        spree/calculator/tiered_percent:
+          attributes:
+            preferred_tiers:
+              should_be_list: должно быть списком порогов, каждый из которых содержит
+                минимальное количество и значение
+              thresholds_should_be_positive_number: для каждого порога должно быть задано значение больше 0
+              thresholds_should_be_unique: значения порогов не должны повторяться
+              values_should_be_percent: каждое значение должно быть от 0% до 100%
+        spree/catalog:
+          attributes:
+            base:
+              no_audience: не назначен ни одной аудитории, поэтому после активации его никто
+                не увидит. Сначала назначьте компанию или группу покупателей.
+            price_list:
+              owned_by_another_catalog: уже используется другим каталогом. Сначала отвяжите его там.
+        spree/catalog_quantity_rule:
+          attributes:
+            base:
+              quantity_rule_states_nothing: Укажите минимальное количество заказа, кратность
+                заказа или оба значения
+        spree/category:
+          attributes:
+            parent:
+              must_belong_to_same_store: должна относиться к тому же магазину
+        spree/classification:
+          attributes:
+            taxon_id:
+              already_linked: уже связана с этим товаром
+        spree/company:
+          attributes:
+            base:
+              cannot_destroy_with_orders: Нельзя удалить компанию, от имени которой
+                оформлялись заказы, включая её подразделения.
+            kind:
+              anchors_descendant_divisions: нельзя преобразовать в подразделение, пока
+                нижестоящие подразделения используют её как юридическое лицо
+              holds_tax_registrations: нельзя преобразовать в подразделение, пока на неё
+                оформлены налоговые регистрации или сертификаты освобождения от
+                налога
+              root_must_be_legal_entity: для корневого узла должна быть указана компания
+            parent:
+              cycle: не может быть собственным дочерним узлом
+              too_deep: превысит максимально допустимую глубину дерева
+        spree/customer:
+          attributes:
+            bill_address_id:
+              belongs_to_other_user: принадлежит другому пользователю
+              deprecated_in_completed_order: нельзя изменить в завершённом заказе
+            ship_address_id:
+              belongs_to_other_user: принадлежит другому пользователю
+              deprecated_in_completed_order: нельзя изменить в завершённом заказе
+        spree/exchange_line_item:
+          attributes:
+            new_variant:
+              must_differ_from_original: должен отличаться от возвращаемого товара
+        spree/export:
+          attributes:
+            type:
+              seller_scope_unavailable: нельзя ограничить одним продавцом
+        spree/exports/price_list_prices:
+          attributes:
+            base:
+              price_list_required: Выберите прайс-лист для экспорта.
+        spree/line_item:
+          attributes:
+            currency:
+              must_match_order_currency: должна совпадать с валютой заказа
+        spree/media:
+          attributes:
+            attachment:
+              attachment_must_be_present: необходимо указать файл
+              not_allowed_content_type: имеет неподдерживаемый тип содержимого
+            external_video_url:
+              unsupported_video_provider: должна быть ссылкой YouTube или Vimeo
+        spree/package_type:
+          attributes:
+            default:
+              cannot_be_given_up: нельзя отключить у единственной упаковки по умолчанию —
+                сначала назначьте другую
+            kind:
+              cannot_stop_being_a_carton: нельзя изменить, пока товары упакованы в этот короб.
+                Сначала переупакуйте их.
+        spree/price:
+          attributes:
+            amount:
+              leaves_a_rising_ladder: оставит цену для количества от %{quantity} шт. равной
+                %{amount}, то есть выше цены %{floor}, которую покупатель платит
+                за меньшее количество
+            min_quantity:
+              requires_price_list: пороговые цены по количеству можно задавать только в прайс-листе
+              too_many_breaks: для одного варианта можно задать не более %{count} порогов
+                количества в одном прайс-листе
+        spree/price_adjustment_tier:
+          attributes:
+            base:
+              too_many_tiers: в прайс-листе можно задать не более %{count} ценовых порогов
+        spree/refund:
+          attributes:
+            amount:
+              greater_than_allowed: превышает допустимую сумму.
+        spree/tax_exemption_certificate:
+          attributes:
+            company:
+              must_be_legal_entity: должна быть юридическим лицом, а не подразделением
+            tax_exemption_reason:
+              not_offered: не является основанием для освобождения от налога, доступным в этом
+                магазине
+        spree/tax_exemption_reason:
+          attributes:
+            base:
+              in_use: указано в сертификатах освобождения от налога и не может быть удалено
+        spree/tax_identifier:
+          attributes:
+            company:
+              must_be_legal_entity: должна быть юридическим лицом, а не подразделением
+            owner:
+              must_be_legal_entity: должно быть юридическим лицом, а не подразделением
+            value:
+              invalid: не похоже на действующий регистрационный номер типа %{kind}
+        spree/wishlist_item:
+          attributes:
+            variant:
+              taken: этот товар уже добавлен в список желаний
     models:
       spree/address:
         many: Адресов
         one: Адрес
         other: Адреса
+        few: Адреса
       spree/classification:
         one: Классификация
         other: Классификации
+        few: Классификации
+        many: Классификаций
       spree/country:
         many: Стран
         one: Страна
         other: Страны
+        few: Страны
       spree/credit_card:
-        many: Кредитных карт
-        one: Кредитная карта
-        other: Кредитные карты
+        many: Банковских карт
+        one: Банковская карта
+        other: Банковские карты
+        few: Банковские карты
       spree/customer_group:
-        one: Группа клиентов
-        other: Группы клиентов
+        one: Группа покупателей
+        other: Группы покупателей
+        few: Группы покупателей
+        many: Групп покупателей
       spree/customer_group_user:
-        one: Пользователь группы клиентов
-        other: Пользователи группы клиентов
+        one: Пользователь группы покупателей
+        other: Пользователя группы покупателей
+        few: Пользователя группы покупателей
+        many: Пользователей группы покупателей
       spree/export:
         one: Экспорт
-        other: Экспорты
+        other: Экспорта
+        few: Экспорта
+        many: Экспортов
       spree/integration:
         one: Интеграция
         other: Интеграции
+        few: Интеграции
+        many: Интеграций
       spree/inventory_unit:
-        many: Единиц
-        one: Единица
-        other: Единицы
+        many: Складских единиц
+        one: Складская единица
+        other: Складской единицы
+        few: Складские единицы
       spree/line_item:
-        many: Позиций
-        one: Позиция
-        other: Позиции
+        many: Позиций заказа
+        one: Позиция заказа
+        other: Позиции заказа
+        few: Позиции заказа
       spree/option_type:
-        many: Товарных опций
-        one: Товарная опция
-        other: Товарные опции
+        many: Типов опций
+        one: Тип опции
+        other: Типа опции
+        few: Типа опции
       spree/option_value:
         one: Значение опции
-        other: Значения опций
+        other: Значения опции
+        few: Значения опции
+        many: Значений опций
       spree/order:
         many: Заказов
         one: Заказ
-        other: Заказы
+        other: Заказа
+        few: Заказа
       spree/payment:
         many: Платежей
         one: Платёж
-        other: Платежи
+        other: Платежа
+        few: Платежа
       spree/payment_method:
         many: Способов оплаты
         one: Способ оплаты
-        other: Способы оплаты
+        other: Способа оплаты
+        few: Способа оплаты
       spree/price:
         one: Цена
         other: Цены
+        few: Цены
+        many: Цен
       spree/price_list:
         one: Прайс-лист
-        other: Прайс-листы
+        other: Прайс-листа
+        few: Прайс-листа
+        many: Прайс-листов
       spree/price_rule:
         one: Правило цены
-        other: Правила цен
+        other: Правила цены
+        few: Правила цены
+        many: Правил цены
       spree/product:
         many: Товаров
         one: Товар
-        other: Товары
+        other: Товара
+        few: Товара
       spree/promotion:
         many: Акций
         one: Акция
         other: Акции
+        few: Акции
       spree/promotion_category:
         many: Категорий акций
-        one: Категория акций
+        one: Категория акции
         other: Категории акций
+        few: Категории акций
       spree/property:
         many: Свойств
         one: Свойство
         other: Свойства
+        few: Свойства
       spree/refund_reason:
-        many: Причин возврата
-        one: Причина возврата
-        other: Причины возврата
+        many: Причин возврата средств
+        one: Причина возврата средств
+        other: Причины возврата средств
+        few: Причины возврата средств
       spree/role:
         many: Ролей
         one: Роль
         other: Роли
+        few: Роли
       spree/shipment:
-        many: Доставок
-        one: Доставка
-        other: Доставки
+        many: Отправлений
+        one: Отправление
+        other: Отправления
+        few: Отправления
       spree/shipping_method:
-        many: Cпособов доставки
-        one: Cпособ доставки
-        other: Cпособы доставки
+        many: Способов доставки
+        one: Способ доставки
+        other: Способа доставки
+        few: Способа доставки
       spree/state:
-        many: Областей/Регионов
-        one: Область/Регион
-        other: Области/Регионы
+        many: Регионов
+        one: Регион
+        other: Региона
+        few: Региона
       spree/stock_location:
-        many: Расположений складов
-        one: Расположение склада
-        other: Расположения складов
+        many: Складов
+        one: Склад
+        other: Склада
+        few: Склада
       spree/stock_movement:
-        one: Движение склада
-        other: Движения склада
+        one: Движение запасов
+        other: Движения запасов
+        few: Движения запасов
+        many: Движений запасов
       spree/stock_transfer:
-        many: Перемещений по складам
-        one: Перемещение по складам
-        other: Перемещения по складам
+        many: Перемещений запасов
+        one: Перемещение запасов
+        other: Перемещения запасов
+        few: Перемещения запасов
       spree/store:
         one: Магазин
-        other: Магазины
+        other: Магазина
+        few: Магазина
+        many: Магазинов
       spree/store_credit:
-        one: Кредит магазина
-        other: Кредиты магазина
+        one: Средство на балансе магазина
+        other: Средства на балансе магазина
+        few: Средства на балансе магазина
+        many: Средств на балансе магазина
       spree/tax_category:
-        many: Категорий налогов
-        one: Категория налогов
-        other: Категории налогов
+        many: Налоговых категорий
+        one: Налоговая категория
+        other: Налоговые категории
+        few: Налоговые категории
       spree/tax_rate:
         many: Ставок налога
         one: Ставка налога
         other: Ставки налога
+        few: Ставки налога
       spree/taxon:
-        many: Таксонов
-        one: Таксон
-        other: Таксона
+        many: Категорий
+        one: Категория
+        other: Категории
+        few: Категории
       spree/taxonomy:
-        few: Таксономий
-        many: Таксономий
-        one: Таксономия
-        other: Таксономии
+        few: Категории
+        many: Категорий
+        one: Категория
+        other: Категории
       spree/user:
         many: Пользователей
         one: Пользователь
         other: Пользователя
+        few: Пользователя
       spree/variant:
-        many: Вариантов
-        one: Вариант
-        other: Варианта
+        many: Вариантов товара
+        one: Вариант товара
+        other: Варианта товара
+        few: Варианта товара
       spree/zone:
         many: Зон
         one: Зона
         other: Зоны
+        few: Зоны
+      spree/digital_asset:
+        one: Цифровой файл
+        few: Цифровых файла
+        many: Цифровых файлов
+        other: Цифрового файла
+      spree/product_type:
+        one: Тип товара
+        few: Типа товара
+        many: Типов товаров
+        other: Типа товара
+      spree/purchase_order:
+        one: Заказ поставщику
+        few: Заказа поставщику
+        many: Заказов поставщику
+        other: Заказа поставщику
+      spree/purchase_order_item:
+        one: Позиция заказа поставщику
+        few: Позиции заказа поставщику
+        many: Позиций заказа поставщику
+        other: Позиции заказа поставщику
+      spree/return:
+        one: Возврат товара
+        few: Возврата товара
+        many: Возвратов товара
+        other: Возврата товара
+      spree/return_reason:
+        one: Причина возврата
+        few: Причины возврата
+        many: Причин возврата
+        other: Причины возврата
+      spree/stock_level:
+        one: Складской остаток
+        few: Складских остатка
+        many: Складских остатков
+        other: Складского остатка
+      spree/stock_transfer_item:
+        one: Позиция перемещения запасов
+        few: Позиции перемещения запасов
+        many: Позиций перемещения запасов
+        other: Позиции перемещения запасов
+      spree/supplier:
+        one: Поставщик
+        few: Поставщика
+        many: Поставщиков
+        other: Поставщика
   errors:
     messages:
       already_confirmed: уже был подтвержден
       not_found: не найден
       not_locked: не был заблокирован
       not_saved:
-        many: "%{count} ошибок препятствуют сохранению %{resource}:"
-        one: 'Одна ошибка препятствует сохранению %{resource}:'
-        other: "%{count} ошибки препятствуют сохранению %{resource}:"
+        many: "Ошибок препятствует сохранению %{resource}: %{count}."
+        one: "Одна ошибка препятствует сохранению %{resource}:"
+        other: "Ошибка препятствует сохранению %{resource}: %{count}."
+        few: "Ошибки препятствуют сохранению %{resource}: %{count}."
+      forbidden_reporting_member: ссылается на данные, которые вам запрещено просматривать
+      fragment_present: не может содержать фрагмент URL
+      invalid_document_number_affix: "может содержать только заглавные латинские буквы, цифры, дефис и #"
+      invalid_system_key: может содержать только строчные латинские буквы, цифры и подчёркивание
+      invalid_uri: должен быть действительным URL
+      locked_after_first_number: нельзя изменить после начала нумерации
+      not_a_number: не является числом
+      relative_uri: должен быть абсолютным URL
+      secured_uri: должен начинаться с https, поскольку на него передаётся код авторизации
+      seeded_report_read_only: это встроенный отчёт, его нельзя изменить — сохраните копию
+      unspecified_scheme: должен содержать схему, например https
   number:
     percentage:
       format:
         precision: 1
+    currency:
+      format:
+        delimiter:  
+        separator: ","
   spree:
     accepts_email_marketing: Согласен на email-рассылку
     account: Учетная запись
@@ -443,19 +781,25 @@ ru:
     adjustment_labels:
       tax_rates:
         including_tax: "%{name}%{amount} (включено в цену)"
+        excluding_tax: "%{name}%{amount}"
     adjustments_deleted: Корректировки удалены
     admin_user_mailer:
       password_reset_email:
         action: Сбросить пароль
-        expiry_notice: Срок действия этой ссылки для сброса пароля скоро истечёт. Если вы не запрашивали сброс, никаких действий не требуется.
+        expiry_notice: Срок действия этой ссылки для сброса пароля скоро истечёт. Если
+          вы не запрашивали сброс, никаких действий не требуется.
         greeting: Здравствуйте, %{name}!
-        ignore_notice: Если вы не запрашивали сброс пароля, можете спокойно проигнорировать это письмо. Ваш пароль не будет изменён.
-        instructions: Мы получили запрос на сброс пароля для вашей учётной записи администратора %{store_name}. Нажмите кнопку ниже, чтобы задать новый пароль.
+        ignore_notice: Если вы не запрашивали сброс пароля, можете спокойно
+          проигнорировать это письмо. Ваш пароль не будет изменён.
+        instructions: Мы получили запрос на сброс пароля для вашей учётной записи
+          администратора %{store_name}. Нажмите кнопку ниже, чтобы задать новый
+          пароль.
         subject: Инструкции по сбросу пароля
     all: все
     amount: Сумма
     api_key_no_current_key: Запрос не аутентифицирован ни одним API-ключом
-    api_key_scopes_immutable: не могут быть изменены после создания ключа; создайте новый ключ с нужными правами и отзовите этот
+    api_key_scopes_immutable: не могут быть изменены после создания ключа; создайте
+      новый ключ с нужными правами и отзовите этот
     approver: Подтвердил(а)
     authorized: Одобренные
     availability: доступность
@@ -474,6 +818,16 @@ ru:
       delivery_unavailable: "%{li_name} не может быть доставлен по выбранному адресу"
       discontinued: "%{li_name} удалён, так как снят с продажи"
       out_of_stock: "%{li_name} удалён, так как распродан"
+      currency_unavailable: Товар «%{li_name}» недоступен в валюте %{currency}
+      invalid_price: Цена должна быть неотрицательным числом
+      not_orderable: Товар «%{li_name}» нельзя заказать. Удалите его, чтобы продолжить.
+      price_override_not_allowed: Нельзя менять цены в оформленном заказе — используйте сборы или скидки
+      pricing_unavailable: Не удалось проверить цены. Попробуйте ещё раз.
+      quantity_must_be_positive: Количество должно быть не меньше 1. Чтобы удалить
+        товар, используйте DELETE.
+      quantity_rule_violated: "Товар «%{li_name}» нельзя заказать в таком количестве.
+        Попробуйте: %{quantities}."
+      tax_unavailable: Не удалось рассчитать налог. Попробуйте ещё раз.
     categories: Категории
     category: Категория
     channel: Канал продаж
@@ -484,6 +838,10 @@ ru:
       line_items_required: Добавьте хотя бы один товар в корзину
       payment_required: Добавьте способ оплаты
       ship_address_required: Требуется адрес доставки
+      delivery_method_required: Выберите способ доставки для всех отправлений
+      order_minimum_not_met: Минимальная сумма заказа — %{minimum}. Добавьте товаров
+        ещё на %{shortfall}, чтобы оформить заказ.
+      po_number_required: Для этого аккаунта необходимо указать номер заказа поставщику
     city: Город
     color_code: Код цвета
     company: Компания
@@ -527,38 +885,123 @@ ru:
     draft: Черновик
     eligibility_errors:
       messages:
-        has_excluded_product: В вашей корзине корзине находится продукт препятствующий применению скидочного купона.
-        item_total_less_than: Скидочный купон не может быть применён к заказу с итоговой суммой меньше %{amount}.
-        item_total_less_than_or_equal: Скидочный купон не может быть применён к заказу с итоговой суммой меньше или равной %{amount}.
-        item_total_more_than: Скидочный купон не может быть применён к заказу с итоговой суммой больше %{amount}.
-        item_total_more_than_or_equal: Скидочный купон не может быть применён к заказу с итоговой суммой больше или равной %{amount}.
+        has_excluded_product: В вашей корзине корзине находится продукт препятствующий
+          применению скидочного купона.
+        item_total_less_than: Скидочный купон не может быть применён к заказу с итоговой
+          суммой меньше %{amount}.
+        item_total_less_than_or_equal: Скидочный купон не может быть применён к заказу с
+          итоговой суммой меньше или равной %{amount}.
+        item_total_more_than: Скидочный купон не может быть применён к заказу с итоговой
+          суммой больше %{amount}.
+        item_total_more_than_or_equal: Скидочный купон не может быть применён к заказу с
+          итоговой суммой больше или равной %{amount}.
         limit_once_per_user: Скидочный купон может быть применён только один раз.
-        missing_product: Скидочный купон не может быть применён, так как в вашем заказе нет необходимых товаров.
-        missing_taxon: Перед применением этого промокода необходимо добавить товар из всех применимых категорий.
+        missing_product: Скидочный купон не может быть применён, так как в вашем заказе
+          нет необходимых товаров.
+        missing_taxon: Перед применением этого промокода необходимо добавить товар из
+          всех применимых категорий.
         no_applicable_products: Перед применением этого промокода необходимо добавить подходящий товар.
         no_matching_channel: Этот промокод недействителен для данного канала продаж.
         no_matching_market: Этот промокод недействителен на вашем рынке.
-        no_matching_taxons: Перед применением этого промокода необходимо добавить товар из подходящей категории.
-        no_user_or_email_specified: Перед применением этого промокода необходимо войти в систему или указать свой email.
+        no_matching_taxons: Перед применением этого промокода необходимо добавить товар
+          из подходящей категории.
+        no_user_or_email_specified: Перед применением этого промокода необходимо войти в
+          систему или указать свой email.
         no_user_specified: Вам нужно войти на сайт, чтобы применить скидочный купон.
         not_first_order: Этот купон может быть применён только к первому заказу.
         wrong_country: Этот промокод недействителен в вашей стране
+        wrong_currency: Этот код купона нельзя использовать для заказов в данной валюте.
     email: Электронная почта
     error: ошибка
     error_user_destroy_with_orders: Пользователя, связанного с заказами, нельзя удалить
     error_user_does_not_have_any_store_credits: У пользователя нет доступных кредитов магазина
     errors:
       messages:
-        cannot_delete_default_channel: Канал по умолчанию нельзя удалить. Сначала назначьте другой канал по умолчанию.
+        cannot_delete_default_channel: Канал по умолчанию нельзя удалить. Сначала
+          назначьте другой канал по умолчанию.
         channel_store_mismatch: должен принадлежать тому же магазину
         invalid_order_routing_rule: не является зарегистрированным правилом маршрутизации заказов
         invalid_order_routing_strategy: не является зарегистрированной стратегией маршрутизации заказов
         store_association_can_not_be_changed: Связь с магазином нельзя изменить
         store_is_already_set: Магазин уже назначен
+        already_a_member: уже является участником
+        cannot_delete_channel_with_active_api_keys: Нельзя удалить канал, пока к нему
+          привязаны активные API-ключи. Сначала отзовите эти ключи.
+        cannot_delete_default_package_type: Нельзя удалить упаковку по умолчанию.
+          Сначала назначьте упаковкой по умолчанию другую.
+        cart_currency_mismatch: нельзя объединить корзины с разными валютами
+        commission_rate_needs_an_amount: необходимо указать фиксированную сумму хотя бы в одной валюте
+        coupon_code_frozen_after_completion: нельзя изменить код купона в завершённом
+          заказе — вместо этого добавьте скидку вручную
+        custom_field_definition_mismatch: должно соответствовать определению дополнительного поля
+        delivery_zone_not_in_origin_group: должна входить в группу мест отправки способа доставки
+        delivery_zone_not_in_profile: должна входить в профиль доставки способа доставки
+        delivery_zone_postal_definition_required: для правила по почтовому индексу укажите префикс или диапазон от/до
+        delivery_zone_prefix_and_range_exclusive: нельзя одновременно указать префикс и диапазон от/до
+        delivery_zone_range_inverted: должен быть не меньше значения postal_code_from
+        delivery_zone_range_not_supported: диапазоны почтовых индексов для этой страны
+          не поддерживаются — используйте префиксы
+        discount_has_no_effect: скидка не повлияет на этот заказ
+        discount_value_must_be_positive: значение скидки должно быть положительным числом
+        discount_value_type_invalid: value_type должен иметь значение flat или percent
+        duplicate_variant: нельзя добавлять один вариант товара несколько раз
+        exactly_one_adjustable: должна быть связана ровно с одной корректируемой сущностью
+        exactly_one_of_cart_or_order: должна относиться либо к корзине, либо к заказу
+        exactly_one_of_line_item_or_fulfillment: должна относиться либо к позиции заказа, либо к отгрузке
+        flat_fee_cannot_charge_delivery: недоступна для фиксированной комиссии, которая
+          уже учитывает продажу, к которой относится доставка. Добавьте
+          отдельную ставку для доставки.
+        integration_connection_failed: не удалось подключиться с сохранёнными учётными данными
+        integration_type_not_registered: не является зарегистрированной интеграцией
+        invalid_collection_rule: не является зарегистрированным правилом подборки
+        invalid_commission_rule: не является допустимым для этого магазина типом правила комиссии
+        invalid_commission_rule_type: тип правила комиссии %{type} не поддерживается этим магазином
+        invalid_delivery_method_rule: не является зарегистрированным правилом способа доставки
+        invalid_json: "должно быть корректным JSON: %{detail}"
+        invalid_refund_method: должно иметь значение original_payment или store_credit
+        invalid_seller_requirement: не является зарегистрированным требованием к продавцу
+        invalid_status: Недопустимый статус
+        invalid_storefront_access: не является допустимым уровнем доступа к витрине
+        items_not_a_list: items должен быть списком объектов
+        money_preference_too_many_decimals: содержит больше %{count} знаков после запятой для валюты %{currency}
+        must_be_greater_than_min_amount: должна быть не меньше минимального значения
+        no_pickup_point_provider: для этого способа доставки не настроен провайдер пунктов выдачи
+        not_cancellable: нельзя отменить после отправки товаров
+        oidc_account_not_provisioned: Эта учётная запись не имеет доступа к магазину.
+          Попросите администратора прислать приглашение.
+        oidc_authentication_failed: Не удалось войти через этого провайдера. Попробуйте ещё раз.
+        oidc_missing_code: Провайдер удостоверений не вернул код авторизации.
+        oidc_requires_redirect: Для входа через этого провайдера нужно перейти на его
+          страницу авторизации.
+        pickup_point_not_found: провайдер не нашёл пункт выдачи
+        product_not_in_store: должны относиться к этому магазину
+        profile_does_not_accept_provider: способ доставки %{provider} нельзя добавить в профиль %{profile}
+        promotion_discount_not_editable: скидки по акциям пересчитываются автоматически
+          и не могут редактироваться вручную
+        rate_provider_requires_shipping: провайдер %{provider} рассчитывает стоимость
+          отправлений, поэтому способ должен предусматривать доставку по адресу
+        rate_provider_unavailable: недоступен для этого магазина — сначала подключите интеграцию
+        refund_amount_requires_shared_payment: можно указать только если платёж разделён между несколькими заказами
+        same_as_inviter: не может совпадать с пригласившим пользователем
+        seller_delivery_method_not_shareable: продавцам можно предоставлять только
+          способы доставки самого маркетплейса
+        seller_delivery_method_provider: способ доставки продавца рассчитывает
+          собственные тарифы и выполняется вручную; аккаунты перевозчиков
+          принадлежат маркетплейсу
+        seller_requirement_store_mismatch: должно относиться к тому же магазину, что и продавец
+        stock_level_immutable: нельзя изменить после резервирования. Снимите резерв и
+          создайте его заново.
+        unknown_calculator_type: тип калькулятора %{type} недоступен
+        unknown_custom_field_type: "не является известным типом дополнительного поля
+          (допустимые типы: %{types})"
+        unknown_scopes: "содержит неизвестные области доступа: %{scopes}"
+        unregistered_actor: не является зарегистрированным классом субъекта
+        variant_product_mismatch: должно относиться к тому же товару, что и вариант
     expired: Истёк
     export_mailer:
       export_done:
-        message: Отличная работа, ваш экспорт готов! Воспользуйтесь ссылкой ниже, чтобы его скачать.
+        message: Отличная работа, ваш экспорт готов! Воспользуйтесь ссылкой ниже, чтобы
+          его скачать.
         subject: Ваш экспорт %{export_number} успешно обработан!
       greeting: Здравствуйте, %{user_name},
     field: Поле
@@ -582,7 +1025,8 @@ ru:
     height: Высота
     i18n:
       this_file_language: Russian (RU)
-    idempotency_key_reused: Этот ключ идемпотентности (Idempotency-Key) уже использовался с другими параметрами запроса.
+    idempotency_key_reused: Этот ключ идемпотентности (Idempotency-Key) уже
+      использовался с другими параметрами запроса.
     image: Изображение
     import: Импорт
     in_stock: В наличии
@@ -594,15 +1038,18 @@ ru:
     invitation_mailer:
       greeting: Здравствуйте, %{user_name},
       invitation_accepted:
-        body: "%{invitee_name} принял ваше приглашение присоединиться к %{resource_name}"
-        subject: "%{invitee_name} принял ваше приглашение присоединиться к %{resource_name}"
+        body: "%{invitee_name} принял ваше приглашение присоединиться к
+          %{resource_name}"
+        subject: "%{invitee_name} принял ваше приглашение присоединиться к
+          %{resource_name}"
       invitation_email:
         body: "%{inviter_name} пригласил вас присоединиться к %{resource_name}"
-        link_description: 'Чтобы принять это приглашение, нажмите на ссылку ниже:'
+        link_description: "Чтобы принять это приглашение, нажмите на ссылку ниже:"
         subject: Приглашение присоединиться к %{resource_name}
-    iso: ISO Alpha-2
+    iso: Код ISO 3166-1 alpha-2
     item: Наименование
-    items_cannot_be_shipped: К сожалению мы не можем доставить ваш товар на указанный адрес. Пожалуйста введите другой адрес.
+    items_cannot_be_shipped: К сожалению мы не можем доставить ваш товар на
+      указанный адрес. Пожалуйста введите другой адрес.
     key: Ключ
     kind: Тип
     label: Метка
@@ -629,7 +1076,8 @@ ru:
     none: Ни одного
     number: Номер
     on_hand: в наличии
-    only_active_products_can_be_added_to_cart: Черновики и архивные товары нельзя добавить в корзину, сначала сделайте товар активным.
+    only_active_products_can_be_added_to_cart: Черновики и архивные товары нельзя
+      добавить в корзину, сначала сделайте товар активным.
     open: Открыто
     option_name: Название опции
     option_type: Товарная опция
@@ -664,14 +1112,16 @@ ru:
         description: Применять цены в зависимости от канала продаж
       customer_group_rule:
         description: Применять ценообразование к определённым группам клиентов
-    price_sack: Price Sack
+    price_sack: Скидка по порогу суммы
     prices: Цены
     privacy_policy: Политика конфиденциальности
     processing: Обработка
     product: Товар
     product_translations: Переводы товаров
     products: Товары
-    products_cannot_be_shipped: В данный момент мы не можем доставить %{product_names} по вашему текущему адресу. Измените адрес доставки или удалите %{product_names} из корзины.
+    products_cannot_be_shipped: В данный момент мы не можем доставить
+      %{product_names} по вашему текущему адресу. Измените адрес доставки или
+      удалите %{product_names} из корзины.
     promotion: Промо-акция
     promotion_action_types:
       create_adjustment:
@@ -753,7 +1203,7 @@ ru:
     selected_quantity_not_available: товара %{item} недостаточно.
     ship: доставка
     ship_address: Адрес доставки
-    shipment: Отправка
+    shipment: Отправление
     shipped: Отправлено
     shipping: Доставка
     shipping_address: Адрес доставки
@@ -777,6 +1227,23 @@ ru:
         must_have_variant: Необходимо добавить хотя бы один вариант
         same_location: не может совпадать с местом назначения
         variants_unavailable: Некоторые варианты недоступны на %{stock}
+        already_closed: Перемещение уже завершено или отменено.
+        in_transit_resolution_required: Выберите, вернуть ли товары на исходный склад или списать их.
+        invalid_receipt_quantity: Количество товара %{variant} не может быть отрицательным.
+        item_not_on_document: Одна из позиций не относится к этому перемещению.
+        locations_in_different_stores: должен относиться к тому же магазину, что и исходный склад
+        no_items_received: Товары не приняты.
+        not_draft: В состояние готовности к отправке можно перевести только черновик
+          перемещения.
+        not_editable: Изменять можно только черновик перемещения.
+        not_in_transit: Принять можно только перемещение в пути.
+        not_partially_received: Закрыть с недостачей можно только частично принятое перемещение.
+        not_ready_to_ship: Вернуть в черновики можно только перемещение, готовое к отправке.
+        not_shippable: Отметить как находящееся в пути можно только черновик или готовое
+          к отправке перемещение.
+        only_draft_can_be_deleted: Удалить можно только черновик перемещения — остальные отмените.
+        repeated_item: Товар %{variant} указан несколько раз. Передайте одну запись на
+          каждую позицию с количеством из этой поставки.
     store: В магазин
     store_credit:
       allocated: Добавлено
@@ -789,11 +1256,12 @@ ru:
       currency_mismatch: Валюта кредита магазина не совпадает с валютой заказа
       insufficient_authorized_amount: Невозможно списать больше авторизованной суммы
       insufficient_funds: Оставшейся суммы кредита магазина недостаточно
-      successful_action: 'Успешная операция с кредитом магазина: %{action}'
-      unable_to_credit: 'Невозможно зачислить по коду: %{auth_code}'
+      successful_action: "Успешная операция с кредитом магазина: %{action}"
+      unable_to_credit: "Невозможно зачислить по коду: %{auth_code}"
       unable_to_find: Не удалось найти кредит магазина
-      unable_to_find_for_action: 'Не удалось найти кредит магазина по коду авторизации: %{auth_code} для операции: %{action}'
-      unable_to_void: 'Невозможно отменить по коду: %{auth_code}'
+      unable_to_find_for_action: "Не удалось найти кредит магазина по коду
+        авторизации: %{auth_code} для операции: %{action}"
+      unable_to_void: "Невозможно отменить по коду: %{auth_code}"
     success: Успех
     tags: Тэги
     tax: Налог
@@ -821,14 +1289,834 @@ ru:
       endpoint_disabled:
         disabled_at_label: Отключено в
         heading: Конечная точка вебхука отключена
-        instructions: Проверьте URL и сервис конечной точки, затем снова включите её в разделе Настройки → Разработчики → Вебхуки.
-        message: Конечная точка вебхука «%{endpoint_name}» была автоматически отключена после повторяющихся сбоев доставки.
+        instructions: Проверьте URL и сервис конечной точки, затем снова включите её в
+          разделе Настройки → Разработчики → Вебхуки.
+        message: Конечная точка вебхука «%{endpoint_name}» была автоматически отключена
+          после повторяющихся сбоев доставки.
         name_label: Название
         reason_label: Причина
-        subject: 'Конечная точка вебхука отключена: %{endpoint_name}'
+        subject: "Конечная точка вебхука отключена: %{endpoint_name}"
         url_label: URL
     weight: Вес
     weight_unit: Единица веса
     width: Ширина
     year: Год
     zip: Индекс
+    permissions_catalog:
+      groups:
+        access: Доступ
+        analytics: Аналитика
+        catalog: Каталог
+        customers: Покупатели
+        loyalty: Программа лояльности
+        marketing: Маркетинг
+        orders: Заказы
+        seller: Продавец
+        sellers: Продавцы
+        settings: Настройки
+      kinds:
+        read: Просмотр
+        write: Управление
+      resources:
+        api_keys:
+          description: Создание и отзыв API-ключей
+          label: API-ключи
+        categories:
+          description: Дерево категорий и классификаторы
+          label: Категории
+        collections:
+          description: Подборки товаров, заданные вручную или правилами
+          label: Подборки
+        customers:
+          description: Аккаунты покупателей, адреса, карты и группы
+          label: Покупатели
+        dashboard:
+          description: Аналитика продаж и показателей магазина
+          label: Панель аналитики
+        email_templates:
+          description: Шаблоны писем покупателям и оформление писем
+          label: Шаблоны писем
+        fulfillments:
+          description: Комплектация, отправка и отслеживание заказов
+          label: Отгрузки
+        gift_cards:
+          description: Подарочные карты и партии карт
+          label: Подарочные карты
+        orders:
+          description: Заказы, позиции, возвраты товаров, обмены и обращения
+          label: Заказы
+        payments:
+          description: Оплата заказов и списание средств
+          label: Платежи
+        products:
+          description: Товары, варианты, опции, цены и медиафайлы
+          label: Товары
+        promotions:
+          description: Акции, правила и коды купонов
+          label: Акции
+        purchasing:
+          description: Поставщики и заказы поставщикам
+          label: Закупки
+        refunds:
+          description: Оформление и просмотр возвратов средств
+          label: Возвраты средств
+        settings:
+          description: Настройки магазина, оплаты, доставки, налогов и каналов продаж
+          label: Настройки магазина
+        staff:
+          description: Сотрудники, приглашения, роли и разрешения
+          label: Сотрудники и роли
+        stock:
+          description: Остатки, склады, движение и перемещение запасов
+          label: Запасы
+        store_credits:
+          description: Баланс магазина покупателей
+          label: Баланс магазина
+        webhooks:
+          description: Конечные точки вебхуков и доставка событий
+          label: Вебхуки
+    seller_requirement_types:
+      accept_terms:
+        description: Ознакомьтесь и примите условия маркетплейса
+        name: Принять условия
+      attestation:
+        description: Подтвердите это самостоятельно до одобрения заявки
+        name: Подтверждение продавца
+      billing_address:
+        description: Адрес для выставления счетов по выплатам
+        name: Платёжный адрес
+      complete_profile:
+        description: Заполните публичный профиль, который увидят покупатели
+        name: Заполнить профиль
+      delivery_method:
+        description: Укажите хотя бы один способ доставки заказов
+        name: Способ доставки
+      document:
+        description: Загрузите документ для проверки маркетплейсом
+        name: Документ
+      minimum_products:
+        description: Разместите не меньше указанного количества товаров
+        name: Минимум товаров
+      operator_review:
+        description: Маркетплейс проверит это вручную перед одобрением заявки
+        name: Ручная проверка
+      package_type:
+        description: Укажите размер и вес упаковки, в которой отправляете заказы
+        name: Упаковка для отправки
+      policy:
+        description: Опубликуйте документ с таким названием
+        name: Правила продавца
+      required_custom_fields:
+        description: Заполните сведения, которые запрашивает маркетплейс
+        name: Обязательные дополнительные поля
+      returns_address:
+        description: Адрес, на который покупатели отправляют возвраты
+        name: Адрес для возвратов
+    fulfillments:
+      errors:
+        backordered_units: Эта отгрузка содержит товары, ожидающие поступления, поэтому
+          её пока нельзя передать в доставку.
+        cannot_cancel: Отгрузку нельзя отменить при текущем статусе.
+        cannot_fulfill: Нельзя завершить отгрузку при текущем статусе.
+        cannot_mark_delivered: Отметить доставленным можно только отправление со статусом «Отгружен».
+        cannot_purchase_label: Этикетку можно купить только до отправки заказа.
+        insufficient_quantity: Запрошенное количество товара %{item} (%{requested})
+          превышает количество, которое осталось отгрузить (%{available}).
+        insufficient_stock_on_hand: Для отправки требуется %{requested} ед. товара
+          %{item}, но на этом складе есть только %{on_hand}. Скорректируйте
+          остатки или принудительно выполните отправку.
+        invalid_cost: стоимость должна быть неотрицательным числом
+        invalid_quantity: Количество товара %{item} должно быть положительным целым числом
+        invalid_status: при передаче статуса он должен иметь значение shipped
+        label_purchase_failed: Не удалось купить этикетку. Проверьте подключение службы
+          доставки и попробуйте ещё раз.
+        no_items_to_fulfill: В заказе нет товаров, ожидающих отгрузки.
+        not_in_fulfillment: Запрошенное количество товара %{item} (%{requested})
+          превышает количество (%{available}), закреплённое за этой отгрузкой.
+        order_canceled: Нельзя создавать отгрузки для отменённого заказа.
+        order_draft: Нельзя отгружать черновик заказа — сначала завершите оформление.
+        order_not_completed: Вручную создавать отгрузки можно только для завершённых заказов.
+        order_not_paid: Этот заказ ещё не оплачен.
+        unknown_tracking_status: "неизвестный статус отслеживания: %{status}"
+    purchase_order:
+      errors:
+        already_closed: Заказ поставщику уже принят или отменён.
+        already_receiving: По этому заказу уже оформлялась поставка, поэтому вернуть его
+          в черновики нельзя.
+        invalid_receipt_quantity: Количество товара %{variant} не может быть отрицательным.
+        item_not_on_document: Одна из позиций не относится к этому заказу поставщику.
+        must_have_variant: Добавьте хотя бы один вариант товара.
+        no_items_received: Товары не приняты.
+        not_draft: Отправленным поставщику можно отметить только черновик заказа.
+        not_editable: Изменять можно только черновик заказа поставщику.
+        not_ordered: Принять можно только отправленный поставщику заказ.
+        not_ordered_for_draft: Вернуть в черновики можно только отправленный поставщику заказ.
+        not_partially_received: Закрыть с недостачей можно только частично принятый заказ.
+        only_draft_can_be_deleted: Удалить можно только черновик заказа поставщику — остальные отмените.
+        repeated_item: Товар %{variant} указан несколько раз. Передайте одну запись на
+          каждую позицию с количеством из этой поставки.
+    shipping_labels:
+      errors:
+        already_purchased: Для этой посылки уже куплена действующая этикетка доставки.
+        file_fetch_failed: Не удалось получить файл этикетки от службы доставки (HTTP %{status}).
+        file_renamed: Передайте подписанный ID загруженной этикетки в параметре
+          file_signed_id.
+        file_required: Для загруженной этикетки нужен файл.
+        no_file_url: Служба доставки не предоставила файл этикетки.
+        not_refund_requested: Подтвердить возврат средств можно только для этикетки, по
+          которой служба доставки ещё не приняла решение.
+        not_refundable: Вернуть средства можно только за купленную этикетку, по которой
+          возврат ещё не оформлен.
+        provider_has_no_labels: Провайдер этого способа доставки не создаёт этикетки.
+        purchased_not_deletable: Купленную этикетку можно вернуть, но не удалить.
+        refund_failed: Служба доставки отказала в возврате средств за эту этикетку.
+        return_closed: Купить этикетку для возврата можно, только пока возврат открыт.
+        tracking_number_required: Для загруженной этикетки необходимо указать номер отслеживания.
+        uploaded_not_refundable: Этикетка загружена, а не куплена через Spree, поэтому
+          вернуть за неё средства нельзя — удалите её.
+    delivery_method_rule_types:
+      channel_rule:
+        description: Предлагать способ доставки только в выбранных каналах.
+        name: Канал
+      company_rule:
+        description: Предлагать способ доставки только для заказов компании или только
+          для заказов без компании.
+        name: Компания
+      excluded_products_rule:
+        description: Не предлагать способ доставки для посылок с выбранными товарами.
+        name: Исключённые товары
+      item_total_rule:
+        description: Ограничить способ доставки диапазоном стоимости товаров в корзине.
+        name: Сумма товаров
+      volume_rule:
+        description: Ограничить способ доставки диапазоном объёма отправления в
+          кубических метрах.
+        name: Объём
+      weight_rule:
+        description: Ограничить способ доставки диапазоном веса посылки.
+        name: Вес
+    commission_rule_types:
+      category_rule:
+        description: Применять эту ставку только к товарам из выбранных категорий и их
+          вложенных категорий
+        name: Категория
+      item_total_rule:
+        description: Применять эту ставку только к продажам в заданном диапазоне стоимости
+        name: Стоимость продажи
+      product_rule:
+        description: Применять эту ставку только к выбранным товарам
+        name: Товар
+      seller_rule:
+        description: Применять эту ставку только к продажам выбранных продавцов
+        name: Продавец
+    collection_rule_types:
+      available_on:
+        description: Товары, опубликованные за последние N дней
+        name: Недавно опубликованные
+      sale:
+        description: Товары со скидкой относительно прежней цены
+        name: Распродажа
+      tag:
+        description: Товары с подходящей меткой
+        name: Метка
+    data_request_errors:
+      address_changed: Адрес электронной почты аккаунта изменился после отправки запроса
+      already_anonymized: Персональные данные этого покупателя уже удалены
+      confirmation_invalid: Срок действия ссылки подтверждения истёк или она недействительна
+      download_unavailable: Срок действия ссылки для скачивания истёк или она недействительна
+      not_pending: Этот запрос уже обработан
+    email_templates:
+      another_admin: другой администратор
+      no_sample_record: В этом магазине пока нет записи %{record} для предпросмотра письма.
+      sample_needs_permission: В предпросмотре показаны данные магазина; требуется
+        разрешение %{permissions}.
+      stale_draft: Пользователь %{name} сохранил черновик после того, как вы его
+        открыли. Перед сохранением перезагрузите страницу, чтобы увидеть
+        изменения.
+      test_email_needs_admin: Тестовое письмо отправляется вошедшему администратору,
+        поэтому необходимо войти в аккаунт.
+      test_email_subject: "[Тест] %{subject}"
+    order_routing_rule_types:
+      default_location:
+        description: Предпочитать склад, отмеченный как основной
+        name: Основной склад
+      minimize_splits:
+        description: Предпочитать склад, который может собрать максимум товаров целиком,
+          чтобы избежать разделения отправлений
+        name: Минимизировать разделение
+      preferred_location:
+        description: Отгружать со склада, закреплённого за заказом, если он задан
+        name: Предпочтительный склад
+    seller_user_mailer:
+      password_reset_email:
+        action: Сбросить пароль
+        expiry_notice: Срок действия ссылки для сброса пароля скоро истечёт. Если вы не
+          запрашивали сброс, никаких действий не требуется.
+        greeting: Здравствуйте, %{name}!
+        ignore_notice: Если вы не запрашивали сброс пароля, просто проигнорируйте это
+          письмо. Ваш пароль не будет изменён.
+        instructions: Мы получили запрос на сброс пароля кабинета продавца магазина
+          %{store_name}. Нажмите кнопку ниже, чтобы задать новый пароль.
+        subject: Инструкции по сбросу пароля
+    import_mailer:
+      greeting: Здравствуйте, %{user_name}!
+      import_done:
+        failed_message: "Не удалось импортировать строк: %{failed_count}. Проверьте их и
+          повторите импорт в отчёте."
+        message: "Импорт завершён. Успешно обработано строк: %{completed_count}."
+        subject: Обработка импорта %{import_number} завершена
+        view_results: Открыть отчёт об импорте
+    tax_identifier_kinds:
+      au_abn: Австралийский бизнес-номер (ABN)
+      ch_vat: НДС Швейцарии
+      eu_vat: НДС ЕС
+      gb_vat: НДС Великобритании
+      us_ein: Идентификационный номер работодателя США (EIN)
+    stock_movement:
+      reasons:
+        correction: Корректировка
+        count: Инвентаризация
+        damaged: Повреждение
+        inventory_feed: Обновление остатков из системы учёта
+        manual_adjustment: Ручная корректировка
+        promotion_or_donation: Акция или пожертвование
+        received: Приёмка
+        return_restock: Возврат товара на склад
+        theft_or_loss: Кража или утрата
+    tax_capabilities:
+      oss_thresholds:
+        description: "При превышении общего порога трансграничных продаж в ЕС ставки
+          страны назначения не включаются автоматически: это зависит от годового
+          оборота во всех странах назначения, а не от отдельного заказа."
+        label: Порог дистанционных продаж
+      proportional_delivery_tax:
+        description: Доставка облагается по единой ставке, заданной для способа
+          доставки, а не по ставкам товаров. Если в корзине товары с разными
+          ставками, налог на доставку будет рассчитан неверно.
+        label: Пропорциональный налог на доставку
+      reverse_charge:
+        description: Налог начисляется покупателю-компании с регистрацией плательщика
+          НДС, а не выставляется счёт с нулевой ставкой. Регистрационный номер
+          сохраняется, но не меняет расчёт налога.
+        label: Обратное начисление НДС в ЕС
+      us_local_tax:
+        description: Местные ставки округов, городов и районов не применяются —
+          учитываются только ставки страны или штата. В штатах США с местными
+          налогами сумма налога будет занижена.
+        label: Местные налоги США
+    stock_level:
+      errors:
+        adjustment_exclusive_with_count_on_hand: Укажите либо фактический остаток, либо
+          корректировку, но не оба значения
+        adjustment_not_an_integer: Корректировка должна быть целым числом
+        count_on_hand_not_an_integer: Фактический остаток должен быть целым числом
+    seed:
+      commission_rates:
+        marketplace_default: Комиссия маркетплейса по умолчанию
+      delivery_profiles:
+        digital: Цифровой товар
+      product_types:
+        default: По умолчанию
+        digital: Цифровой товар
+    tax_providers:
+      internal: Ставки налогов Spree
+    tax_provider_unavailable: Не удалось рассчитать сумму возвращаемого налога.
+      Попробуйте ещё раз через несколько минут.
+    delivery_rates:
+      quoted_after_review: Стоимость будет рассчитана после проверки
+    any: Любой
+    accept: Принять
+    accepted: Принято
+    api_key_channel_immutable: нельзя изменить после создания ключа; создайте новый
+      ключ для нужного канала и отзовите этот
+    api_key_channel_must_belong_to_store: должен относиться к тому же магазину, что и ключ
+    api_key_channel_publishable_only: можно указать только для публичных ключей
+    capture_amount_not_positive: Сумма списания должна быть больше нуля.
+    capture_exceeds_payment_amount: Сумма списания не может превышать сумму платежа.
+    cart_completion_in_progress: Корзина оформляется. Повторите попытку через некоторое время.
+    catalogs:
+      no_price_list_to_import: В этом каталоге нет прайс-листа, из которого можно импортировать товары.
+      product_not_in_store: Один из этих товаров относится к другому магазину.
+    company_invitations:
+      not_pending: Срок действия приглашения уже завершён, его нельзя отозвать.
+    coupon_code_unavailable: Код купона в вашей корзине больше недоступен.
+    coupon_code_unknown_error: Сейчас не удалось применить этот код купона к корзине.
+    currency_does_not_match_market: должна быть %{currency} — валютой выбранного рынка
+    custom_field_definitions: Определения пользовательских полей
+    custom_fields: Пользовательские поля
+    customer_errors:
+      anonymize_failed: Не удалось удалить персональные данные; изменения не внесены
+    deliveries:
+      errors:
+        delivered: Эта отправка уже доставлена. Срок возврата отсчитывается от даты
+          доставки, поэтому удалить её нельзя.
+        has_label: Для этой доставки создана транспортная накладная. Чтобы отменить её,
+          оформите возврат по накладной.
+    digital_assets_attachment_must_be_private: Перед прикреплением загрузите файл в закрытое хранилище.
+    digital_assets_content_type_list_invalid: "Недопустимый тип содержимого:
+      %{types}. Укажите тип и подтип, например application/pdf."
+    digital_assets_content_type_not_accepted: Файлы типа %{content_type} не принимаются на этой торговой площадке.
+    digital_assets_provider_takes_no_file: Этот файл предоставляется самой торговой
+      площадкой, поэтому загрузить ему замену нельзя.
+    digital_assets_sellers_disabled: Продавцам запрещено добавлять и изменять
+      цифровые файлы на этой торговой площадке.
+    digital_assets_upload_not_found: Загруженный файл не найден. Загрузите его ещё раз.
+    exchange_fee_label: Обмен %{number}
+    gift_card_already_canceled: Подарочная карта уже отменена.
+    gift_card_canceled: Подарочная карта отменена.
+    gift_card_held_by_another_order: Подарочная карта используется в другом
+      оформляемом заказе. Повторите попытку через несколько минут.
+    gift_card_no_amount_remaining: На подарочной карте не осталось средств.
+    gift_card_not_applied: Не удалось применить подарочную карту.
+    guest_checkout_not_allowed: Чтобы оформить заказ, войдите в аккаунт.
+    import_has_no_failed_rows: В этом импорте нет ошибочных строк для повторной обработки.
+    import_invalid_number: В столбце %{column} должно быть число, например 16.50; получено %{value}.
+    import_mapping_not_completed: Сопоставление столбцов импорта ещё не завершено.
+    import_not_mapping: Для этого импорта сейчас не выполняется сопоставление столбцов.
+    import_not_processing: Этот импорт сейчас не обрабатывается.
+    insufficient_stock_for_reservation: Доступно только %{available} шт. товара %{item}
+    invalid_password: Неверный пароль.
+    invitation_already_accepted: Это приглашение уже принято.
+    invitation_expired: Срок действия приглашения истёк. Отправьте новое приглашение.
+    invitation_invitee_missing: В приглашении не указан получатель.
+    invitation_not_acceptable: Приглашение не найдено, истекло или уже принято.
+    invitation_role_resource_mismatch: должен относиться к тому же магазину или продавцу, что и приглашение
+    locale_not_supported_by_market: не предлагается на выбранном рынке
+    locales_not_listed: "содержит неподдерживаемые Spree языки: %{codes}"
+    maintenance_tasks_turned_off: Для этой установки отключены задачи обслуживания.
+      Запустите обновление из командной строки с помощью spree upgrade или
+      bin/rake spree:upgrade.
+    no_maximum: Без ограничения сверху
+    no_refundable_payments: По этому заказу не осталось платежей для возврата.
+    not_received: Средства за этот возврат нельзя вернуть, пока его товары не
+      отмечены как полученные.
+    nothing_to_refund: По этому возврату больше нечего возмещать.
+    order_cannot_be_deleted: Завершённые заказы и заказы с полностью рассчитанными
+      платежами нельзя удалить.
+    package_types:
+      default_name: Коробка для доставки
+    password_required_to_create_account: Для создания аккаунта требуется пароль.
+    pickup:
+      store_pickup: Самовывоз из магазина
+    po_document_invalid: Документ заказа на закупку должен быть файлом PDF,
+      изображением, документом Word, таблицей или CSV размером не более %{size}.
+    po_document_missing: К этому заказу не прикреплён документ заказа на закупку.
+    po_document_too_large: превышает допустимый размер %{size}.
+    po_document_upload_incomplete: Документ заказа на закупку загружен не полностью. Прикрепите его ещё раз.
+    price_list_import_ambiguous_sku: В этом магазине несколько товаров с артикулом
+      %{sku}. Назначьте каждому уникальный артикул перед импортом цен.
+    price_list_import_failed: Не удалось сохранить цену.
+    price_list_import_invalid_amount: В столбце %{column} должно быть число, например 16.50; получено %{value}.
+    price_list_import_invalid_quantity: min_quantity должно быть целым числом единиц товара; получено %{value}.
+    price_list_import_no_price_list: Этот импорт не связан с прайс-листом.
+    price_list_import_price_rises_with_quantity: "Цена для %{quantity} шт. не должна
+      превышать %{floor} — цену для меньшего количества. Файл применяется
+      построчно: при снижении цен во всей линейке сначала указывайте большее
+      количество."
+    price_list_import_sku_required: Требуется артикул.
+    price_list_import_too_many_breaks: Для одного варианта в прайс-листе можно
+      задать не более %{count} порогов количества.
+    price_list_import_unknown_sku: В этом магазине нет товара с артикулом %{sku}.
+    price_list_import_unsupported_currency: Этот магазин не продаёт товары за %{currency}.
+    product_import_unknown_stock_location: Склад с названием %{name} не найден.
+    promotion_label: Акция (%{name})
+    purchase_order_import_ambiguous_sku: В этом магазине несколько товаров с
+      артикулом %{sku}. Назначьте каждому уникальный артикул перед импортом
+      заказа.
+    purchase_order_import_destination_required: Укажите склад назначения.
+    purchase_order_import_failed: Не удалось сохранить заказ на закупку.
+    purchase_order_import_invalid_cost: unit_cost должно быть числом, например 16.50; получено %{value}.
+    purchase_order_import_invalid_date: В столбце %{column} должна быть полная дата,
+      например 2026-03-31; получено %{value}.
+    purchase_order_import_invalid_quantity: quantity должно быть положительным целым числом; получено %{value}.
+    purchase_order_import_reference_required: "Укажите номер заказа: по нему строки файла объединяются в заказы."
+    purchase_order_import_sku_required: Укажите артикул.
+    purchase_order_import_supplier_required: Укажите поставщика.
+    purchase_order_import_unknown_destination: На этом складе нет места хранения с названием %{name}.
+    purchase_order_import_unknown_sku: В этом магазине нет товара с артикулом %{sku}.
+    purchase_order_import_unknown_supplier: Поставщик %{name} не найден в этом магазине. Сначала добавьте его.
+    purchase_order_import_unsupported_currency: Этот магазин не закупает товары за %{currency}.
+    refund_amount_negative: Сумма возврата средств не может быть отрицательной.
+    refund_amount_required: "Введите сумму больше нуля: по этому возврату клиенту
+      ещё причитаются средства."
+    refund_exceeds_balance: Сумма превышает остаток, доступный для возврата.
+    refunds: Возвраты средств
+    rejected: Отклонено
+    return_errors:
+      outside_window: Срок возврата этого заказа (%{days} дн.) истёк.
+    role_cannot_be_deleted: Эта роль защищена или используется сотрудниками либо
+      ожидающими приглашениями, поэтому удалить её нельзя.
+    role_immutable: защищённую роль нельзя изменить
+    role_permissions_not_grantable_for_audience: "нельзя назначить роли аудитории %{audience}: %{keys}"
+    role_permissions_unknown: "содержит неизвестные разрешения: %{keys}"
+    role_resource_immutable: нельзя изменить после создания роли
+    seller: Продавец
+    seller_access_denied: У вас нет доступа к этому продавцу.
+    seller_membership_required: Этот аккаунт не связан ни с одним продавцом.
+    seller_payout_nothing_to_settle: Сейчас этому продавцу нечего выплачивать.
+    seller_requirements:
+      custom_field_not_for_sellers: должно быть пользовательским полем, предназначенным для продавцов
+      file_required: Для этого требования необходимо прикрепить файл.
+      incomplete: Требование «%{name}» не выполнено.
+      invalid_terms_effective_from: Дата вступления условий в силу указана неверно.
+    seller_submission_no_file: К этой заявке не прикреплён файл.
+    seller_team_last_member: У продавца должен остаться хотя бы один участник
+      команды. Пригласите другого участника перед удалением этого.
+    sort_a_to_z: От А до Я
+    sort_high_to_low: По убыванию
+    sort_low_to_high: По возрастанию
+    sort_z_to_a: От Я до А
+    stock_levels: Остатки на складах
+    stock_receipt:
+      errors:
+        nothing_counted: "Для каждой позиции поставки нужно указать хотя бы одну
+          единицу: принятую или отклонённую."
+    store_credit_using_gift_card_error: Нельзя применить кредит магазина после подарочной карты.
+    tiered_flat_rate: Фиксированная ставка по ступеням
+    tiered_percent: Процентная ставка по ступеням
+    upload_reference_invalid: Подписанная ссылка в запросе недействительна или
+      устарела. Загрузите файл ещё раз.
+    upload_wrong_visibility: файл должен быть загружен с уровнем видимости %{visibility}
+    reporting:
+      export:
+        total: Итого
+      unassigned: Не назначено
+      dimensions:
+        cart_channel:
+          label: Канал продаж
+          description: Канал, в котором была создана корзина.
+        cart_status:
+          label: Статус корзины
+          description: Показывает, была ли корзина оформлена в заказ, оставлена без
+            оформления или ещё активна.
+        category:
+          label: Категория
+          description: Категория, к которой относится проданный товар.
+        channel:
+          label: Канал продаж
+          description: Канал, через который поступил заказ.
+        company:
+          label: Компания
+          description: Компания, для которой была совершена покупка.
+        completed_at:
+          label: Дата заказа
+          description: Дата оформления заказа, сгруппированная по дням, неделям или
+            месяцам в часовом поясе магазина.
+        country:
+          label: Страна доставки
+          description: Страна в адресе доставки (код ISO).
+        coupon_code:
+          label: Код купона
+          description: Использованный код скидки, сохранённый в заказе.
+        customer:
+          label: Покупатель
+          description: Покупатель, оформивший заказ; определяется по электронной почте.
+        customer_type:
+          label: Тип покупателя
+          description: Показывает, оформлял ли покупатель заказы раньше.
+        fulfillment_status:
+          label: Статус отгрузки
+          description: Состояние отгрузки заказа.
+        market:
+          label: Рынок
+          description: Рынок, на котором был оформлен заказ.
+        moved_at:
+          label: Дата движения запасов
+          description: Дата движения товара, сгруппированная по дням, неделям или месяцам
+            в часовом поясе магазина.
+        moved_variant:
+          label: Вариант товара с изменением остатка
+          description: Вариант товара, остаток которого изменился.
+        movement_kind:
+          label: Тип движения запасов
+          description: Операция, выполненная с товарным запасом.
+        paid_at:
+          label: Дата платежа
+          description: Дата приёма платежа, сгруппированная по дням, неделям или месяцам в
+            часовом поясе магазина.
+        payment_method:
+          label: Способ оплаты
+          description: Способ, которым был принят платёж.
+        payment_result:
+          label: Результат платежа
+          description: Показывает, прошло ли отдельное списание успешно.
+        payment_status:
+          label: Статус платежа
+          description: Состояние оплаты заказа.
+        product:
+          label: Товар
+          description: Проданный товар.
+        promotion:
+          label: Акция
+          description: Акция, по которой предоставлена скидка.
+        seller:
+          label: Продавец
+          description: Продавец, продавший товар.
+        started_at:
+          label: Дата создания корзины
+          description: Дата создания корзины, сгруппированная по часам, дням, неделям или
+            месяцам в часовом поясе магазина.
+        stock_location:
+          label: Склад
+          description: Место хранения, с которого товар перемещён или на которое он
+            поступил.
+        variant:
+          label: Вариант товара
+          description: Вариант проданного товара (артикул).
+      metrics:
+        abandoned_value:
+          label: Стоимость брошенных корзин
+          description: Стоимость корзин, оставленных без оформления. Просроченные корзины
+            удаляются, поэтому период длиннее срока их хранения занижает сумму.
+        average_order_value:
+          label: Средний чек
+          description: Общая сумма продаж, делённая на количество заказов.
+        cart_conversion_rate:
+          label: Доля оформленных корзин
+          description: Доля созданных за период корзин, по которым были оформлены заказы.
+            Считаются корзины, а не посещения; это не коэффициент конверсии
+            витрины.
+        carts_abandoned:
+          label: Брошенные корзины
+          description: Корзины, которые не были оформлены и оставались без изменений
+            дольше установленного магазином срока.
+        carts_converted:
+          label: Оформленные корзины
+          description: Корзины, по которым были созданы заказы. Корзина, разделённая между
+            продавцами, считается один раз.
+        carts_started:
+          label: Созданные корзины
+          description: Корзины, созданные за выбранный период.
+        commission:
+          label: Комиссия
+          description: Доход торговой площадки от этих продаж, включая налог.
+        cost_of_goods:
+          label: Себестоимость товаров
+          description: Затраты на проданные товары. Для вариантов без указанной
+            себестоимости учитывается ноль.
+        customer_lifetime_value:
+          label: Пожизненная ценность покупателя
+          description: "Все расходы покупателя за всё время за вычетом возвратов средств.
+            Диапазон отчёта не ограничивает заказы: он определяет только список
+            покупателей."
+        customers:
+          label: Покупатели
+          description: Уникальные адреса электронной почты покупателей, оформивших заказы.
+        discounts:
+          label: Скидки
+          description: Скидки на проданные товары.
+        duties:
+          label: Таможенные пошлины
+          description: Таможенные пошлины, начисленные на заказ.
+        fees:
+          label: Сборы
+          description: Сборы, видимые покупателю, кроме таможенных пошлин.
+        gross_margin:
+          label: Валовая маржа
+          description: Валовая прибыль как доля чистых продаж.
+        gross_profit:
+          label: Валовая прибыль
+          description: Чистые продажи за вычетом себестоимости проданных товаров.
+        gross_sales:
+          label: Валовые продажи
+          description: Стоимость товаров по цене за единицу, умноженной на количество, до
+            вычета скидок, возвратов и налогов.
+        net_payments:
+          label: Чистые платежи
+          description: Полученные средства за вычетом возвратов, с разбивкой по способу
+            оплаты.
+        net_sales:
+          label: Чистые продажи
+          description: Валовые продажи за вычетом скидок и возвратов. Фактическая
+            стоимость проданных товаров.
+        orders:
+          label: Заказы
+          description: Количество оформленных заказов.
+        orders_lifetime:
+          label: Заказы за всё время
+          description: Количество заказов, оформленных покупателем за всё время. Как и
+            пожизненная ценность покупателя, не ограничивается диапазоном
+            отчёта.
+        payments_count:
+          label: Платежи
+          description: Количество успешных списаний.
+        payments_failed:
+          label: Неуспешные платежи
+          description: Количество неуспешных списаний.
+        payments_received:
+          label: Полученные платежи
+          description: Средства, успешно полученные на дату совершения платежа.
+        payments_refunded:
+          label: Возвращённые платежи
+          description: Средства, возвращённые по этим платежам.
+        promotion_discounts:
+          label: Скидки по акциям
+          description: Сумма скидок по акциям; показывается положительным числом.
+        promotion_redemptions:
+          label: Применения акций
+          description: Количество оформлений заказа с применённой акцией. Корзина,
+            разделённая между продавцами, считается один раз.
+        returns:
+          label: Возвраты средств
+          description: Средства, возвращённые в период выдачи возврата.
+        sell_through:
+          label: Доля реализации
+          description: Отгруженные единицы как доля от поступивших.
+        seller_payout:
+          label: Выплаты продавцам
+          description: Сумма, причитающаяся продавцам по этим продажам после вычета
+            комиссии.
+        shipping:
+          label: Доставка
+          description: Стоимость доставки, начисленная покупателю.
+        taxes:
+          label: Налоги
+          description: Сумма дополнительных и включённых в цену налогов.
+        total_sales:
+          label: Общая сумма продаж
+          description: Чистые продажи плюс доставка, пошлины, сборы и налоги. Сумма
+            полученных средств.
+        units_adjusted:
+          label: Скорректировано единиц
+          description: Количество единиц, добавленных или списанных при корректировке
+            запасов.
+        units_received:
+          label: Поступило единиц
+          description: Количество единиц, оприходованных на склад.
+        units_shipped:
+          label: Отгружено единиц
+          description: Количество единиц, отправленных со склада.
+        units_sold:
+          label: Продано единиц
+          description: Сумма количеств товаров в позициях заказа.
+      families:
+        carts:
+          label: Корзины
+          description: Созданные, оформленные и брошенные корзины.
+        inventory:
+          label: Запасы
+        payments:
+          label: Платежи
+        sales:
+          label: Продажи
+      presets:
+        last_12_months:
+          label: Последние 12 месяцев
+        last_30_days:
+          label: Последние 30 дней
+        last_4_weeks:
+          label: Последние 4 недели
+        last_7_days:
+          label: Последние 7 дней
+        last_90_days:
+          label: Последние 90 дней
+        last_month:
+          label: Прошлый месяц
+        last_quarter:
+          label: Прошлый квартал
+        last_week:
+          label: Прошлая неделя
+        month_to_date:
+          label: С начала месяца
+        quarter_to_date:
+          label: С начала квартала
+        today:
+          label: Сегодня
+        week_to_date:
+          label: С начала недели
+        year_to_date:
+          label: С начала года
+        yesterday:
+          label: Вчера
+      seeds:
+        failed_payments:
+          name: Неуспешные платежи
+          description: Неудачные списания за последние четыре недели с разбивкой по
+            способам оплаты.
+        first_time_vs_returning:
+          name: Новые и вернувшиеся покупатели
+          description: Продажи новым и вернувшимся покупателям за последние четыре недели.
+        net_sales_over_time:
+          name: Чистые продажи по неделям
+          description: Валовые продажи, скидки, возвраты и чистые продажи за последние
+            двенадцать месяцев по неделям.
+        orders_by_fulfillment_status:
+          name: Заказы по статусу отгрузки
+          description: Количество заказов и продажи по статусу отгрузки за последние
+            четыре недели.
+        orders_by_payment_status:
+          name: Заказы по статусу оплаты
+          description: Количество заказов и продажи по статусу оплаты за последние четыре
+            недели.
+        payments_by_method:
+          name: Платежи по способам оплаты
+          description: Сумма платежей за вычетом возвратов по каждому способу оплаты за
+            последние четыре недели.
+        payments_over_time:
+          name: Динамика платежей
+          description: Ежедневные поступления и возвраты платежей за последние четыре
+            недели в сравнении с предыдущим периодом.
+        product_margin:
+          name: Маржинальность товаров
+          description: Товары, отсортированные по валовой прибыли за последние четыре
+            недели, с указанием себестоимости и маржи.
+        returns_over_time:
+          name: Динамика возвратов
+          description: Ежемесячные возвраты средств за последние двенадцать месяцев в
+            сравнении с предыдущим периодом.
+        sales_by_channel:
+          name: Продажи по каналам
+          description: Продажи и заказы по каналам за последние четыре недели.
+        sales_by_country:
+          name: Продажи по странам
+          description: Продажи и заказы по странам доставки за последние четыре недели.
+        sales_by_market:
+          name: Продажи по рынкам
+          description: Продажи и заказы по рынкам за последние четыре недели.
+        sales_over_time:
+          name: Динамика продаж
+          description: Ежедневные продажи, заказы и средний чек за последние четыре недели
+            в сравнении с предыдущим периодом.
+        sell_through_by_variant:
+          name: Доля реализации по вариантам
+          description: Количество отгруженных и поступивших единиц по каждому варианту за
+            последние четыре недели.
+        seller_payouts:
+          name: Выплаты продавцам
+          description: Сумма, заработанная каждым продавцом за прошлый месяц после вычета
+            комиссии торговой площадки.
+        stock_movement_over_time:
+          name: Движение запасов
+          description: Количество поступивших и отгруженных единиц за последние двенадцать
+            месяцев по неделям.
+        top_categories:
+          name: Популярные категории
+          description: Категории с наибольшими чистыми продажами за последние четыре недели.
+        top_companies:
+          name: Компании по сумме покупок
+          description: Компании, отсортированные по сумме покупок за последние четыре
+            недели.
+        top_customers:
+          name: Покупатели по сумме покупок
+          description: Покупатели, отсортированные по сумме покупок за последние четыре
+            недели.
+        top_products:
+          name: Популярные товары
+          description: Товары с наибольшими чистыми продажами за последние четыре недели.
+      values:
+        fulfillment_status:
+          backorder: Ожидает поступления
+          canceled: Отменён
+          delivered: Доставлен
+          fulfilled: Отгружен
+          partial: Частично отгружен
+          unfulfilled: Не отгружен
+        payment_status:
+          authorized: Авторизован
+          none: Не оплачен
+          overcharged: Сумма оплаты превышена
+          paid: Оплачен
+          partially_paid: Оплачен частично
+          partially_refunded: Возвращён частично
+          refunded: Возвращён полностью
+          voided: Аннулирован
