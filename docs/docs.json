@@ -1485,7 +1485,59 @@
                   {
                     "group": "Для начала",
                     "pages": [
+                      "ru/user/what-is-spree-commerce",
+                      "ru/user/using-spree",
                       "ru/user/user-quickstart-guide"
+                    ]
+                  },
+                  {
+                    "group": "Настройки",
+                    "icon": "settings",
+                    "pages": [
+                      {
+                        "group": "Магазин",
+                        "icon": "store",
+                        "pages": [
+                          "ru/user/settings/store-details",
+                          "ru/user/settings/emails",
+                          "ru/user/settings/sales-channels"
+                        ]
+                      },
+                      {
+                        "group": "Продажи",
+                        "icon": "badge-dollar-sign",
+                        "pages": [
+                          "ru/user/settings/markets",
+                          "ru/user/settings/payments",
+                          "ru/user/settings/taxes",
+                          "ru/user/settings/tax-categories",
+                          "ru/user/settings/tax-rates"
+                        ]
+                      },
+                      {
+                        "group": "Доставка и отгрузка",
+                        "icon": "truck",
+                        "pages": [
+                          "ru/user/settings/delivery-profiles",
+                          "ru/user/settings/locations"
+                        ]
+                      },
+                      {
+                        "group": "Маркетплейс",
+                        "icon": "handshake",
+                        "pages": [
+                          "ru/user/settings/marketplace",
+                          "ru/user/settings/seller-requirements"
+                        ]
+                      },
+                      {
+                        "group": "Пользователи и разрешения",
+                        "icon": "user-cog",
+                        "pages": [
+                          "ru/user/settings/staff",
+                          "ru/user/settings/roles"
+                        ]
+                      }
                     ]
                   }
                 ]

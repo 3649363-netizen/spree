@@ -9,33 +9,27 @@ This guide walks you through the essential setup tasks, from configuring payment
 
 ## Getting Started
 
-![Getting Started tab showing the onboarding checklist with four key tasks](/docs/images/user/quickstart/1-getting-started.png)
+![Getting Started tab showing the onboarding checklist with four key tasks](/images/user/quickstart/1-getting-started.png)
 
 When you log into a fresh Spree Commerce instance, the dashboard shows a Getting Started checklist to help you configure the essentials and go live faster.
 
-Depending on what your store still needs, the checklist can include setting up payment methods and taxes, adding products, adding a support email and shipping address, and connecting a storefront. Completed tasks disappear from the list. Let’s walk through the main setup steps below.
+The default checklist is ordered by shipping address, payment methods, products, support email, taxes, and storefront connection. Extensions can add or remove tasks, so the list may differ in your store. Completed tasks stay marked until all applicable tasks are complete; the widget then disappears. Let’s walk through the main setup steps below.
 
 ### Setup Payment Method
 
-![Payment setup onboarding step](/docs/images/user/quickstart/2-setup-payments.png)
+![Payment setup onboarding step](/images/user/quickstart/2-setup-payments.png)
 
 To sell anything, you’ll need to configure at least one payment method.
 
 Click **Setup Payment Method** to jump to **Settings → Payments**.
 
-![Payments section of admin dashboard](/docs/images/user/quickstart/3-settings-payments.png)
+![Payments section of admin dashboard](/images/user/quickstart/3-settings-payments.png)
 
-At the top, you’ll see your currently enabled methods (e.g., Store Credits, added by default). 
+The table lists your configured payment methods, including their provider, storefront visibility and status. Drag a row to change the order customers see at checkout.
 
-Below that is a list of available payment methods you can add, such as Stripe, Adyen or PayPal.
+<Note>To add another method, click **Add payment method**. The provider selector only lists providers installed in your application. If you expect a provider that is not listed, ask your developer to confirm it has been added to the codebase.</Note>
 
-<Note>Only payment methods that have been installed will appear in the Available Payment Methods list. If a method you’re expecting isn’t listed, ask your developer to confirm it has been added to the codebase.</Note>
-
-To add a method:
-
-1. Click **Add** next to your chosen method
-2. Follow the setup instructions in the form
-3. Click **Create** to enable it
+Choose the provider, enter its required settings and credentials, set its name and storefront visibility, then click **Create payment method**.
 
 <Note>Most payment gateways require you to have an account with the provider before setup.</Note>
 
@@ -43,7 +37,7 @@ To learn more about available methods and configuration, see [<u>Payments</u>](h
 
 ### Add Products
 
-![Add products Spree onboarding step](/docs/images/user/quickstart/4-add-products.png)
+![Add products Spree onboarding step](/images/user/quickstart/4-add-products.png)
 
 There are three ways to populate your store’s catalog:
 
@@ -64,7 +58,7 @@ For more detailed guides on creating and managing products, see:
 
 ### Add Customer Support Email
 
-![Add a customer support email onboarding step](/docs/images/user/quickstart/5-customer-support-email.png)
+![Add a customer support email onboarding step](/images/user/quickstart/5-customer-support-email.png)
 
 This small but critical step ensures customers know how to reach you.
 
@@ -74,7 +68,7 @@ This address will appear on your storefront and works as a contact for your cust
 
 ### Setup Taxes Collection
 
-![Setup tax collection ecommerce onboarding step](/docs/images/user/quickstart/6-setup-taxes.png)
+![Setup tax collection ecommerce onboarding step](/images/user/quickstart/6-setup-taxes.png)
 
 To charge the correct taxes at checkout, click **Setup Tax Rates** to be taken to **Settings → Taxes**.
 
